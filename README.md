@@ -26,4 +26,5 @@ npm run build
 
 ## 技术栈
 
-[MDUI](https://mdui.org/)
+- [Vue3](https://vuejs.org/)
+- [MDUI](https://mdui.org/)
