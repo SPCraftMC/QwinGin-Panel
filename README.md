@@ -23,3 +23,7 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## 技术栈
+
+[MDUI](https://mdui.org/)
