@@ -1,0 +1,11 @@
+.famework404 {
+    margin-top: 15%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.famework404 i {
+    font-size: 90px;
+}

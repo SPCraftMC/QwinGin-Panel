@@ -1,5 +1,5 @@
 {
-  "name": "moe.xmcn.spcraft.qwinginpanel",
+  "name": "QwinGin Panel",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "mdui": "^1.0.2",
     "vue": "^3.3.2",
     "vue-router": "^4.2.0"
   },
