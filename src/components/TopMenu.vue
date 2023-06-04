@@ -1,14 +1,24 @@
 <script setup>
-import settings from '@/settings.js'
+import '@/assets/components/topbar.css'
+import settings from '@/settings'
+
+function more() {
+
+}
 </script>
 
 <template>
-    <div class="mdui-appbar">
-        <div v-if="__config.loading.value" class="mdui-progress">
+    <div class="mdui-appbar topbar">
+        <div v-if="__config.loading" class="mdui-progress">
             <div class="mdui-progress-indeterminate"></div>
         </div>
         <div class="mdui-toolbar">
-            <router-link to="/"><span>{{ settings.header.title }}</span></router-link>
+            <i class="mdui-icon material-icons" mdui-drawer="{target: '#left-drawer'}">&#xe3c7;</i>
+            <router-link to="/"><span class="mdui-typo-title">{{ settings.header.title }}</span></router-link>
+            <div class="mdui-toolbar-spacer"></div>
+                <a @click="more" class="mdui-btn mdui-btn-icon">
+                    <i class="mdui-icon material-icons">more_vert</i>
+                </a>
         </div>
     </div>
 </template>
