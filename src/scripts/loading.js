@@ -1,11 +1,11 @@
-import __config from '@/main.js'
+import store from "@/scripts/vuex/store";
 
 var loadBar = {
     start: () => {
-        __config.loading = true
+        store.loading = true
     },
     stop: () => {
-        __config.loading = false
+        store.loading = false
     }
 }
 

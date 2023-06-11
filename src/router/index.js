@@ -24,9 +24,11 @@ const router = createRouter({
 })
 
 router.beforeEach(() => {
+  console.log("开始加载")
   loadBar.start()
 })
-router.addRoute(() => {
+router.afterEach(() => {
+  console.log("结束加载")
   loadBar.stop()
 })
 

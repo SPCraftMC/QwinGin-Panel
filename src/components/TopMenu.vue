@@ -1,6 +1,8 @@
 <script setup>
 import '@/assets/components/topbar.css'
-import settings from '@/settings'
+import store from "@/scripts/vuex/store";
+
+const __config = store.getters.__config
 
 function more() {
 
@@ -13,10 +15,10 @@ function more() {
             <div class="mdui-progress-indeterminate"></div>
         </div>
         <div class="mdui-toolbar">
-            <i class="mdui-icon material-icons" mdui-drawer="{target: '#left-drawer'}">&#xe3c7;</i>
-            <router-link to="/"><span class="mdui-typo-title">{{ settings.header.title }}</span></router-link>
+            <i mdui-drawer="{target: '#left-drawer'}" class="mdui-icon material-icons">&#xe3c7;</i>
+            <router-link to="/"><span class="qwingin-font-teal mdui-typo-title">{{ __config.settings.header.title }}</span></router-link>
             <div class="mdui-toolbar-spacer"></div>
-                <a @click="more" class="mdui-btn mdui-btn-icon">
+                <a @click=more() class="mdui-btn mdui-btn-icon">
                     <i class="mdui-icon material-icons">more_vert</i>
                 </a>
         </div>

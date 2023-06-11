@@ -1,3 +1,17 @@
 * {
     font-weight: 100;
 }
+
+.qwingin-font-teal {
+    color: #1DE9B6
+}
+
+.qwingin-table-margin {
+    margin: 30px;
+}
+
+.qwingin-left-line {
+    padding-left: 10px;
+    border-left: solid 5px;
+    border-color: #1DE9B6;
+}
