@@ -23,3 +23,8 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## 技术栈
+
+- [Vue3](https://vuejs.org/)
+- [MDUI](https://mdui.org/)
