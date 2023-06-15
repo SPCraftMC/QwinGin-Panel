@@ -3,7 +3,7 @@ import store from "@/scripts/vuex/store";
 </script>
 
 <template>
-    <footer class="mdui-appbar mdui-shadow-0 mdui-typo">
+    <footer class="mdui-appbar mdui-shadow-0 mdui-typo qwingin-footer">
     
         <div class="qwingin-footer-divider mdui-divider"></div>
         
