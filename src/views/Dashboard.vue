@@ -1,5 +1,7 @@
 <script setup>
 import store from "@/scripts/vuex/store";
+
+//console.log(store.getters.mcskinToken)
 </script>
 
 <template>

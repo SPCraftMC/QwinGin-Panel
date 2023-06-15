@@ -8,6 +8,7 @@ import { createApp } from 'vue'
 import App from '@/App.vue'
 import router from '@/router'
 import userdata from "@/scripts/axios/userdata";
+import settings from "@/settings";
 
 const app = createApp(App)
 
@@ -20,3 +21,6 @@ mdui.mutation()
 
 // 请求数据
 userdata.req()
+
+document.querySelector("title").innerText = settings.header.title
+document.querySelector("#site-ico").href = "https://spcraft.ml/favicon.png"

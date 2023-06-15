@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import loadBar from "@/scripts/loading";
+import store from "@/scripts/vuex/store";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,7 +24,12 @@ const router = createRouter({
       path: "/about",
       name: "about",
       component: () => import('../views/About.vue')
-      },
+    },
+    {
+      path: "/auth/login",
+      name: "auth-login",
+      component: () => import('../views/auth/Login.vue')
+    },
     {
       path:'/:pathMatch(.*)',
       redirect: {
@@ -33,8 +39,11 @@ const router = createRouter({
   ]
 })
 
-router.beforeEach(() => {
+router.beforeEach((to) => {
   loadBar.start()
+  if (to.name !== "404" && to.name !== "auth-login") {
+    if (store.getters.mcskinToken === "") router.push("/auth/login")
+  }
 })
 router.afterEach(() => {
   loadBar.stop()

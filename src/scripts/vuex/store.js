@@ -12,13 +12,17 @@ const __config = ref({
 const __user = ref({
     name: "#User_Name",
     mail: "#User_Mail",
-    token: ""
+    avatar: settings.system.yggdrasil_root + "/avatar/player/"
 })
 
 const store = new vuex.Store({
     state: {
         __config,
-        __user
+        __user,
+        mcskin: {
+            code: "",
+            token: localStorage.__extend_mcskin_token || ""
+        }
     },
     getters: {
         __config(state) {
@@ -26,6 +30,12 @@ const store = new vuex.Store({
         },
         __user(state) {
             return state.__user
+        },
+        mcskinToken(state) {
+            return state.mcskin.token
+        },
+        mcskinCode(state) {
+            return state.mcskin.code
         }
     },
     mutations: {
@@ -33,7 +43,15 @@ const store = new vuex.Store({
             return state.__config.loading = status
         },
         ref_user(state, data) {
-            state.__user.name = data.name
+            console.log(data)
+            state.__user = ref(data)
+        },
+        mcskin(state, code) {
+            state.mcskin.code = code
+        },
+        mcskinX(state, token) {
+            state.mcskin.token = token
+            localStorage.__extend_mcskin_token = token
         }
     }
 })
