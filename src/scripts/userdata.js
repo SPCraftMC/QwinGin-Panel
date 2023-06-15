@@ -1,26 +1,27 @@
 import axios from "axios";
 import settings from "@/settings";
-import app from "@/main";
 import mdui from "mdui";
+import store from "@/scripts/vuex/store";
 
-const sever_url = settings.system.server
+const userdata = {
+    req: () => {
+        const instance = axios.create({
+            baseURL: settings.system.server,
+            timeout: 10000
+        });
 
-axios.get(sever_url + "/user/info/simple")
-    .then((response) => {
-        console.log(response)
-    })
-    .then((response) => {
-        window.onload = () => {
-            app.provide('user_data', response)
-            app.config.globalProperties.user_data = response
-        }
-    })
-.catch((error) => {
-    console.assert(error)
-    mdui.snackbar({
-        message: "无法请求数据，请刷新"
-    })
-})
-
+        instance.get("/user/info/simple")
+        .then((response) => {
+            console.log(response)
+            store.commit("__user", response)
+        })
+        .catch((error) => {
+            console.error("无法请求数据：\n" + error)
+            mdui.snackbar({
+                message: "无法请求数据: " + error.message
+            })
+        })
+    }
+}
 
 export default userdata

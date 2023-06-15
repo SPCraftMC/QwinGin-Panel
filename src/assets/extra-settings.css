@@ -1,7 +1,13 @@
 .mdui-card {
+    padding: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
+    margin-right: 20px;
 }
 .mdui-card div {
     margin-top: 5px;
+}
+
+.mdui-typo a {
+    color: #1DE9B6;
 }

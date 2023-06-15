@@ -15,6 +15,11 @@ const router = createRouter({
       component: () => import('../views/404.vue')
     },
     {
+      path: "/account",
+      name: 'account',
+      component: () => import('../views/Account.vue')
+    },
+    {
       path:'/:pathMatch(.*)',
       redirect: {
         name: "404"
@@ -24,11 +29,9 @@ const router = createRouter({
 })
 
 router.beforeEach(() => {
-  console.log("开始加载")
   loadBar.start()
 })
 router.afterEach(() => {
-  console.log("结束加载")
   loadBar.stop()
 })
 

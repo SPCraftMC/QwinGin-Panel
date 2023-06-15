@@ -1,11 +1,11 @@
 import store from "@/scripts/vuex/store";
 
-var loadBar = {
+const loadBar = {
     start: () => {
-        store.loading = true
+        store.commit("loading", true)
     },
     stop: () => {
-        store.loading = false
+        store.commit("loading", false)
     }
 }
 

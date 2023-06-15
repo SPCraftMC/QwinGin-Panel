@@ -1,22 +1,22 @@
+import 'mdui/dist/css/mdui.min.css'
 import '@/assets/main.css'
 import '@/assets/extra-settings.css'
-import 'mdui/dist/css/mdui.min.css'
+import '@/assets/buttons.css'
 import mdui from 'mdui'
 
-import {ref, createApp} from 'vue'
+import { createApp } from 'vue'
 import App from '@/App.vue'
 import router from '@/router'
+import userdata from "@/scripts/userdata";
 
 const app = createApp(App)
 
+// Vue Router
 app.use(router)
 
-/*
-app.provide('__config', __config)
-app.config.globalProperties.__config = __config
-*/
-
+// 挂载前端并初始化MDUI
 app.mount('#app')
-export default app
-
 mdui.mutation()
+
+// 请求数据
+userdata.req()
