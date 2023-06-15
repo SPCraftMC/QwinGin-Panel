@@ -3,11 +3,11 @@ import store from "@/scripts/vuex/store";
 </script>
 
 <template>
-    <div class="qwingin-table-margin dashboard mdui-container">
+    <div class="qwingin-table-margin dashboard mdui-container-fluid">
         <h1 class="qwingin-left-line qwingin-font-teal">仪表板</h1>
 
         <!-- 用户信息（简易） -->
-        <div class="mdui-card mdui-col-xs-4" style="height: 220px;min-width: 300px;">
+        <div class="mdui-card mdui-col-xs-5" style="height: 220px;min-width: 300px;">
             <i class="mdui-card-header-avatar mdui-icon material-icons">account_circle</i>
             <div class="qwingin-font-teal mdui-card-header-title">用户信息</div>
             <div class="mdui-card-header-subtitle">您的基本信息</div>
@@ -23,12 +23,18 @@ import store from "@/scripts/vuex/store";
         </div>
 
         <!-- 公告 -->
-        <div class="mdui-card mdui-row-xs-6" style="height: 220px;min-width: 300px;">
+        <div class="mdui-card mdui-col-xs-6.5" style="height: 220px;min-width: 300px;">
             <i class="mdui-card-header-avatar mdui-icon material-icons">announcement</i>
             <div class="qwingin-font-teal mdui-card-header-title">公告</div>
             <div class="mdui-card-content">
                 {{ store.getters.__config.announcement }}
             </div>
+        </div>
+
+        <!-- 服务器状态 -->
+        <div class="mdui-card" style="margin-top: 20px">
+            <div class="qwingin-font-teal mdui-card-header-title">服务器状态</div>
+            <div><!--{{ store.getters.__config }}--></div>
         </div>
     </div>
 </template>
