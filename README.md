@@ -28,3 +28,4 @@ npm run build
 
 - [Vue3](https://vuejs.org/)
 - [MDUI](https://mdui.org/)
+- [Axios](https://axios-http.com/)
