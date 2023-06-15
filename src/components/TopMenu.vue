@@ -33,7 +33,7 @@ setInterval(() => {
 
             <!-- Left -->
             <i mdui-drawer="{target: '#left-drawer'}" class="mdui-icon material-icons">dehaze</i>
-            <router-link to="/"><span class="qwingin-font-teal mdui-typo-title">{{ __config.settings.header.title }}</span></router-link>
+            <router-link to="/"><h1 style="max-width: 200px" class="qwingin-font-teal mdui-typo-title">{{ __config.settings.header.title }}</h1></router-link>
 
             <div class="mdui-toolbar-spacer"></div>
 

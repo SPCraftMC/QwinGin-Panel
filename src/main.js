@@ -9,6 +9,7 @@ import App from '@/App.vue'
 import router from '@/router'
 import userdata from "@/scripts/axios/userdata";
 import settings from "@/settings";
+import store from "@/scripts/vuex/store";
 
 const app = createApp(App)
 
@@ -20,7 +21,8 @@ app.mount('#app')
 mdui.mutation()
 
 // 请求数据
-userdata.req()
+if (store.getters.mcskinToken !== "")
+    userdata.req()
 
-document.querySelector("title").innerText = settings.header.title
-document.querySelector("#site-ico").href = "https://spcraft.ml/favicon.png"
+document.querySelector("title").innerText = settings.system.title
+document.querySelector("#site-ico").href = settings.system.icon
