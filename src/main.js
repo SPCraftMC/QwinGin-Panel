@@ -7,7 +7,7 @@ import mdui from 'mdui'
 import { createApp } from 'vue'
 import App from '@/App.vue'
 import router from '@/router'
-import userdata from "@/scripts/userdata";
+import userdata from "@/scripts/axios/userdata";
 
 const app = createApp(App)
 

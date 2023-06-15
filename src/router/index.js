@@ -20,6 +20,11 @@ const router = createRouter({
       component: () => import('../views/Account.vue')
     },
     {
+      path: "/about",
+      name: "about",
+      component: () => import('../views/About.vue')
+      },
+    {
       path:'/:pathMatch(.*)',
       redirect: {
         name: "404"

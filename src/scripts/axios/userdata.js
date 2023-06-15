@@ -10,7 +10,7 @@ const userdata = {
             timeout: 10000
         });
 
-        instance.get("/user/info/simple")
+        instance.get("/user/info")
         .then((response) => {
             console.log(response)
             store.commit("__user", response)

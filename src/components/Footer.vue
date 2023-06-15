@@ -14,7 +14,7 @@ import store from "@/scripts/vuex/store";
 
         <!-- Right -->
         <div class="mdui-float-right">
-        
+            <span>Powered by <router-link to="/about">「青镜」玩家管理面板 (QwinGin-Panel)</router-link></span>
         </div>
         
     </footer>

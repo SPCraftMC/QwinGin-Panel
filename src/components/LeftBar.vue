@@ -17,6 +17,15 @@ import { RouterLink } from "vue-router";
                     <div class="mdui-list-item-content">账户</div>
                 </li>
             </router-link>
+
+            <li class="mdui-divider"></li>
+
+            <router-link to="/about">
+                <li class="mdui-list-item mdui-ripple">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
+                    <div class="mdui-list-item-content">关于</div>
+                </li>
+            </router-link>
         </ul>
     </div>
 </template>
