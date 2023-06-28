@@ -41,8 +41,8 @@ const router = createRouter({
 
 router.beforeEach((to) => {
   loadBar.start()
-  if (to.name !== "404" && to.name !== "auth-login") {
-    if (store.getters.mcskinToken === "") router.push("/auth/login")
+  if (to.name !== "404" && to.name !== "auth-login" && to.name !== "about") {
+    if (store.getters.LcUserData === "") router.push("/auth/login")
   }
 })
 router.afterEach(() => {
