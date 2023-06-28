@@ -2,12 +2,48 @@ import axios from "axios";
 import settings from "@/settings";
 import mdui from "mdui";
 import store from "@/scripts/vuex/store";
+import status from "@/scripts/vuex/status";
 
 const instance = axios.create({
-    baseURL: settings.system.server,
+    baseURL: settings.server,
     timeout: 10000
 });
 
+const server = {
+    init: () => {
+        instance.get("/server/information")
+                .then((response) => {
+                    if (response.data.status)
+                        store.commit("serverInfo", response.data.data)
+                    else {
+                        status.commit("siteLoaded", true)
+                        mdui.snackbar({
+                            message: "服务器错误: " + response.data.message
+                        })
+                    }
+                })
+                .catch((error) => {
+                    status.commit("siteLoaded", true)
+                    mdui.snackbar({
+                        message: "无法请求数据: " + error.message
+                    })
+                })
+        instance.get("/server/oauth_server")
+                .then((response) => {
+                    if (response.data.status) {
+                        store.commit("oauthInfo", response.data.data)
+                        status.commit("siteLoaded", false)
+                    }
+                })
+                .catch((error) => {
+                    status.commit("siteLoaded", true)
+                    mdui.snackbar({
+                        message: "无法请求数据: " + error.message
+                    })
+                })
+    }
+}
+/*
 const userdata = {
     req: () => {
         instance.get("/user/info")
@@ -62,5 +98,6 @@ const userdata = {
         })
     }
 }
+*/
 
-export default userdata
+export default server

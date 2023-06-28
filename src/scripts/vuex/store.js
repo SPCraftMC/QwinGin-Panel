@@ -1,57 +1,35 @@
 import vuex from 'vuex'
 import { ref } from 'vue'
-import settings from "@/settings";
 
-// 基本配置
-const __config = ref({
-    loading: false,
-    settings,
-    announcement: "#Announcement"
-})
-// 基本用户数据结构
-const __user = ref({
-    name: "#User_Name",
-    mail: "#User_Mail",
-    avatar: settings.system.yggdrasil_root + "/avatar/player/"
-})
+let userData = {
+    name: "#USER_NAME",
+    mail: "#USER_MAIL"
+}
+
 
 const store = new vuex.Store({
-    state: {
-        __config,
-        __user,
-        mcskin: {
-            code: "",
-            token: localStorage.__extend_mcskin_token || ""
-        }
-    },
+    state: ref({
+        serverInfo: {},
+        oauthInfo: {},
+        userData
+    }),
     getters: {
-        __config(state) {
-            return state.__config
+        getServerInfo(state) {
+            return state.serverInfo
         },
-        __user(state) {
-            return state.__user
+        getOauthInfo(state) {
+            return state.oauthInfo
         },
-        mcskinToken(state) {
-            return state.mcskin.token
-        },
-        mcskinCode(state) {
-            return state.mcskin.code
+        userData(state) {
+            return userData
         }
     },
     mutations: {
-        loading(state, status) {
-            return state.__config.loading = status
+        serverInfo(state, data) {
+            state.serverInfo = data
         },
-        ref_user(state, data) {
-            console.log(data)
-            state.__user = ref(data)
-        },
-        mcskin(state, code) {
-            state.mcskin.code = code
-        },
-        mcskinX(state, token) {
-            state.mcskin.token = token
-            localStorage.__extend_mcskin_token = token
+        oauthInfo(state, data) {
+            state.oauthInfo = data
         }
     }
 })

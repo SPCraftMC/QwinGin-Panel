@@ -15,10 +15,10 @@ import store from "@/scripts/vuex/store";
             <div class="mdui-card-header-subtitle">您的基本信息</div>
             <div class="mdui-card-content">
                 <span>
-                    用户名: <span>{{ store.getters.__user.name }}</span>
+                    用户名: <span>{{ store.getters.userData.name }}</span>
                 </span><br>
                 <span>
-                    邮箱: <span>{{ store.getters.__user.mail }}</span>
+                    邮箱: <span>{{ store.getters.userData.mail }}</span>
                 </span>
             </div>
             <router-link to="/account"><button style="margin-right: 15px;" class="mdui-float-right button">查看完整信息</button></router-link>
@@ -29,7 +29,7 @@ import store from "@/scripts/vuex/store";
             <i class="mdui-card-header-avatar mdui-icon material-icons">announcement</i>
             <div class="qwingin-font-teal mdui-card-header-title">公告</div>
             <div class="mdui-card-content">
-                {{ store.getters.__config.announcement }}
+                <!--{{ store.getters.serverInfo.announcement }}-->
             </div>
         </div>
 

@@ -2,10 +2,12 @@
 import '@/assets/components/topbar.css'
 import { ref } from 'vue'
 import store from "@/scripts/vuex/store";
+import status from "@/scripts/vuex/status";
 
-const __config = store.getters.__config
-let avatar_src = ref(__config.settings.system.yggdrasil_root + "/avatar/player/" + store.getters.__user.name)
+let avatar_src = ref("https://mcskin.cn/avatar/player/")
+let serverInfo = store.getters.getServerInfo
 
+if (status.getters.isSiteLoaded[0] && !status.getters.isSiteLoaded[1]) avatar_src = ""
 /*
 function more() {
     mdui.snackbar({
@@ -15,25 +17,21 @@ function more() {
 */
 
 function exit_login() {
-    localStorage.__extend_mcskin_token = ""
+    localStorage.__extend_user_token = ""
     location.reload()
 }
-
-setInterval(() => {
-    document.getElementById("user_avatar").src = store.getters.__config.settings.system.yggdrasil_root + "/avatar/player/" + store.getters.__user.name
-}, 5000)
 </script>
 
 <template>
     <div class="mdui-appbar topbar">
-        <div v-if="__config.loading" class="mdui-progress">
+        <div v-if="status.getters.isLoading" class="mdui-progress">
             <div class="mdui-progress-indeterminate"></div>
         </div>
         <header class="mdui-toolbar">
 
             <!-- Left -->
             <i mdui-drawer="{target: '#left-drawer'}" class="mdui-icon material-icons">dehaze</i>
-            <router-link to="/"><h1 style="max-width: 200px" class="qwingin-font-teal mdui-typo-title">{{ __config.settings.header.title }}</h1></router-link>
+            <router-link to="/"><h1 style="max-width: 200px" class="qwingin-font-teal mdui-typo-title"><!--{{ title }}--></h1></router-link>
 
             <div class="mdui-toolbar-spacer"></div>
 

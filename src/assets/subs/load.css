@@ -1,0 +1,15 @@
+.loading {
+    margin-top: 15%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loading .mdui-progress {
+    width: 50%;
+    margin-top: 100px;
+}
+.loading i {
+    font-size: 90px;
+}

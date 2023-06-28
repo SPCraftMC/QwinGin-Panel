@@ -1,4 +1,4 @@
-import store from "@/scripts/vuex/store";
+import store from "@/scripts/vuex/status";
 
 const loadBar = {
     start: () => {

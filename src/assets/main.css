@@ -3,7 +3,7 @@
 }
 
 .qwingin-font-teal {
-    color: #1DE9B6
+    color: #00d6a8
 }
 
 .qwingin-table-margin {
@@ -13,7 +13,7 @@
 .qwingin-left-line {
     padding-left: 10px;
     border-left: solid 5px;
-    border-color: #1DE9B6;
+    border-color: #00d6a8;
 }
 
 .qwingin-footer-divider {
@@ -28,4 +28,8 @@
 
 .qwingin-auth-card {
     margin-top: 50px;
+}
+
+.❤ {
+    color: red;
 }

@@ -7,9 +7,7 @@ import mdui from 'mdui'
 import { createApp } from 'vue'
 import App from '@/App.vue'
 import router from '@/router'
-import userdata from "@/scripts/axios/userdata";
-import settings from "@/settings";
-import store from "@/scripts/vuex/store";
+import server from "@/scripts/axios/server";
 
 const app = createApp(App)
 
@@ -20,9 +18,12 @@ app.use(router)
 app.mount('#app')
 mdui.mutation()
 
+server.init()
+/*
 // 请求数据
 if (store.getters.mcskinToken !== "")
     userdata.req()
 
 document.querySelector("title").innerText = settings.system.title
 document.querySelector("#site-ico").href = settings.system.icon
+*/

@@ -1,5 +1,5 @@
 <script setup>
-import store from "@/scripts/vuex/store";
+import settings from "@/settings";
 </script>
 
 <template>
@@ -9,7 +9,7 @@ import store from "@/scripts/vuex/store";
         
         <!-- Left -->
         <div class="mdui-float-left" style="background: none">
-            <span class="qwingin-copyright" v-html=store.getters.__config.settings.footer.copyright></span>
+            <span class="qwingin-copyright" v-html=settings.footer.copyright></span>
         </div>
 
         <!-- Right -->
