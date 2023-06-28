@@ -5,7 +5,7 @@ import userdata from "@/scripts/axios/userdata";
 import router from "@/router";
 import mdui from "mdui";
 
-let auth_url = store.getters.__config.settings.system.yggdrasil_root + "/oauth/authorize?client_id=67&redirect_uri=http://localhost:5173/auth/login&response_type=code&scope="
+let auth_url = store.getters.__config.settings.system.yggdrasil_root + "/oauth/authorize?client_id=67&redirect_uri=" + window.location.protocol + "//" + window.location.host + "/auth/login&response_type=code&scope="
 
 function getQueryVariable(variable) {
     var query = window.location.search.substring(1);
