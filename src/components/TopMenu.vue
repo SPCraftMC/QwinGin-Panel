@@ -7,7 +7,7 @@ import status from "@/scripts/vuex/status";
 let avatar_src = ref("https://mcskin.cn/avatar/player/")
 let serverInfo = store.getters.getServerInfo
 
-if (status.getters.isSiteLoaded[0] && !status.getters.isSiteLoaded[1]) avatar_src = ""
+//if (status.getters.isSiteLoaded[0] && !status.getters.isSiteLoaded[1]) avatar_src = ""
 /*
 function more() {
     mdui.snackbar({
@@ -36,7 +36,7 @@ function exit_login() {
             <div class="mdui-toolbar-spacer"></div>
 
             <!-- Right -->
-            <img style="height: 35px" id="user_avatar" class="mdui-icon" :src=avatar_src />
+            <img style="height: 35px" id="user_avatar" class="mdui-icon mdui-shadow-5" :src=avatar_src />
             <a mdui-menu="{target: '#top-options'}" class="mdui-btn mdui-btn-icon">
                 <i class="mdui-icon material-icons">more_vert</i>
             </a>
