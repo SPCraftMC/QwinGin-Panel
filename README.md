@@ -30,3 +30,7 @@ npm run build
 - [MDUI](https://mdui.org/)
 - [Axios](https://axios-http.com/)
 - [ionicons](https://ionic.io/ionicons)
+
+## Open Source LICENSE
+
+[GPL-3.0](LICENSE)
