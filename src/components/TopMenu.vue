@@ -30,13 +30,13 @@ function exit_login() {
         <header class="mdui-toolbar">
 
             <!-- Left -->
-            <i mdui-drawer="{target: '#left-drawer'}" class="mdui-icon material-icons">dehaze</i>
-            <router-link to="/"><h1 style="max-width: 200px" class="qwingin-font-teal mdui-typo-title"><!--{{ title }}--></h1></router-link>
+            <i mdui-drawer="{target: '#left-bar'}" class="mdui-icon material-icons">dehaze</i>
+            <router-link to="/"><h1 class="qwingin-font-teal mdui-typo-title">{{ serverInfo.panel_info.title.menu }}</h1></router-link>
 
             <div class="mdui-toolbar-spacer"></div>
 
             <!-- Right -->
-            <img style="height: 35px" id="user_avatar" class="mdui-icon mdui-shadow-5" :src=avatar_src />
+            <img id="user_avatar" class="qwingin-user-avatar mdui-icon mdui-shadow-5" :src=avatar_src />
             <a mdui-menu="{target: '#top-options'}" class="mdui-btn mdui-btn-icon">
                 <i class="mdui-icon material-icons">more_vert</i>
             </a>

@@ -6,10 +6,22 @@ let userData = {
     mail: "#USER_MAIL"
 }
 
+let serverInfo = {
+    "server_name": "EnShii-Daemon",
+    "panel_info": {
+        "name": "QwinGin-Panel",
+        "icon": "/favicon.ico",
+        "title": {
+            "site": "「青镜」玩家管理面板",
+            "menu": ""
+        }
+    }
+}
+
 
 const store = new vuex.Store({
     state: ref({
-        serverInfo: {},
+        serverInfo: serverInfo,
         oauthInfo: {},
         userData
     }),

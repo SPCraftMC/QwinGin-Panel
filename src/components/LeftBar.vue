@@ -3,7 +3,7 @@ import { RouterLink } from "vue-router";
 </script>
 
 <template>
-    <div class="mdui-drawer" id="left-drawer">
+    <div class="mdui-drawer" id="left-bar">
         <ul class="mdui-list">
             <router-link to="/">
                 <li class="mdui-list-item mdui-ripple">

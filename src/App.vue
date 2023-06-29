@@ -8,14 +8,12 @@ import FullLoading from "@/components/FullLoading.vue";
 </script>
 
 <template>
+  <TopMenu />
+  <LeftBar />
   <template v-if="!status.getters.isSiteLoaded[0] || status.getters.isSiteLoaded[1]">
-    <TopMenu />
-    <LeftBar />
     <FullLoading />
   </template>
   <template v-else>
-    <TopMenu />
-    <LeftBar />
     <RouterView />
     <Footer />
   </template>

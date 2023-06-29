@@ -1,9 +1,9 @@
 .mdui-card {
-    padding: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 10px;
     margin-right: 20px;
+    min-width: 300px;
 }
+
 .mdui-card div {
     margin-top: 5px;
 }
@@ -24,4 +24,8 @@ a {
 
 .mdui-snackbar {
     margin-bottom: 15px;
+}
+
+.qwingin-table-margin > .mdui-col-xs-12:not(:last-child) {
+    margin-bottom: 20px;
 }
