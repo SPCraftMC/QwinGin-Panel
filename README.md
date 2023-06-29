@@ -27,6 +27,7 @@ npm run build
 ## 技术栈
 
 - [Vue3](https://vuejs.org/)
+- [Vuex](https://vuex.vuejs.org/)
 - [MDUI](https://mdui.org/)
 - [Axios](https://axios-http.com/)
 - [ionicons](https://ionic.io/ionicons)
