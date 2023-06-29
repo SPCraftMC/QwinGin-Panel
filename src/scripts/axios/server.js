@@ -5,17 +5,21 @@ import store from "@/scripts/vuex/store";
 import status from "@/scripts/vuex/status";
 
 const instance = axios.create({
-    baseURL: settings.server,
+    baseURL: settings.server + "/server",
     timeout: 10000
 });
 
 const server = {
     init: () => {
-        instance.get("/server/information")
+        instance.get("/information")
                 .then((response) => {
-                    if (response.data.status)
+                    if (response.data.status) {
+                        console.log("获得服务器信息")
                         store.commit("serverInfo", response.data.data)
-                    else {
+                        console.log("修改图标与标题")
+                        document.querySelector("title").innerText = response.data.data.panel_info.title.site
+                        document.querySelector("#site-ico").href = response.data.data.panel_info.icon
+                    } else {
                         status.commit("siteLoaded", true)
                         mdui.snackbar({
                             message: "服务器错误: " + response.data.message
@@ -28,12 +32,22 @@ const server = {
                         message: "无法请求数据: " + error.message
                     })
                 })
-        instance.get("/server/oauth_server")
+        instance.get("/oauth_server")
                 .then((response) => {
                     if (response.data.status) {
                         store.commit("oauthInfo", response.data.data)
-                        status.commit("siteLoaded", false)
                     }
+                })
+                .catch((error) => {
+                    status.commit("siteLoaded", true)
+                    mdui.snackbar({
+                        message: "无法请求数据: " + error.message
+                    })
+                })
+        instance.get("/captcha")
+                .then((response) => {
+                    store.commit("captchaInfo", response.data.data)
+                    status.commit("siteLoaded", false)
                 })
                 .catch((error) => {
                     status.commit("siteLoaded", true)

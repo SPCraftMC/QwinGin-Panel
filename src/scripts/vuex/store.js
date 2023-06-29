@@ -6,23 +6,31 @@ let userData = {
     mail: "#USER_MAIL"
 }
 
-let serverInfo = {
-    "server_name": "EnShii-Daemon",
+let serverInfo = ref({
+    "server_name": "LOAD",
     "panel_info": {
-        "name": "QwinGin-Panel",
+        "name": "LOAD",
         "icon": "/favicon.ico",
         "title": {
             "site": "「青镜」玩家管理面板",
             "menu": ""
         }
     }
+})
+
+let captchaInfo = {
+    enable: false,
+    site_key: ""
 }
+
+let oauthInfo = {}
 
 
 const store = new vuex.Store({
     state: ref({
         serverInfo: serverInfo,
-        oauthInfo: {},
+        oauthInfo: oauthInfo,
+        captchaInfo: captchaInfo,
         userData
     }),
     getters: {
@@ -31,6 +39,9 @@ const store = new vuex.Store({
         },
         getOauthInfo(state) {
             return state.oauthInfo
+        },
+        getCaptchaInfo(state) {
+            return state.captchaInfo
         },
         userData(state) {
             return userData
@@ -42,6 +53,9 @@ const store = new vuex.Store({
         },
         oauthInfo(state, data) {
             state.oauthInfo = data
+        },
+        captchaInfo(state, data) {
+            state.captchaInfo = data
         }
     }
 })

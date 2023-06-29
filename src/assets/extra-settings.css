@@ -29,3 +29,6 @@ a {
 .qwingin-table-margin > .mdui-col-xs-12:not(:last-child) {
     margin-bottom: 20px;
 }
+.mdui-textfield input {
+    max-width: 500px;
+}

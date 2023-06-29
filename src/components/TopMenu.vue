@@ -5,7 +5,6 @@ import store from "@/scripts/vuex/store";
 import status from "@/scripts/vuex/status";
 
 let avatar_src = ref("https://mcskin.cn/avatar/player/")
-let serverInfo = store.getters.getServerInfo
 
 //if (status.getters.isSiteLoaded[0] && !status.getters.isSiteLoaded[1]) avatar_src = ""
 /*
@@ -31,7 +30,7 @@ function exit_login() {
 
             <!-- Left -->
             <i mdui-drawer="{target: '#left-bar'}" class="mdui-icon material-icons">dehaze</i>
-            <router-link to="/"><h1 class="qwingin-font-teal mdui-typo-title">{{ serverInfo.panel_info.title.menu }}</h1></router-link>
+            <router-link to="/"><h1 class="qwingin-font-teal mdui-typo-title">{{ store.getters.getServerInfo.panel_info.title.menu }}</h1></router-link>
 
             <div class="mdui-toolbar-spacer"></div>
 

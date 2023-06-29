@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import loadBar from "@/scripts/loading";
-import store from "@/scripts/vuex/store";
+import authinfo from "@/scripts/vuex/authinfo";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -42,7 +42,7 @@ const router = createRouter({
 router.beforeEach((to) => {
   loadBar.start()
   if (to.name !== "404" && to.name !== "auth-login" && to.name !== "about") {
-    if (store.getters.LcUserData === "") router.push("/auth/login")
+    if (authinfo.getters.token === "") router.push("/auth/login")
   }
 })
 router.afterEach(() => {

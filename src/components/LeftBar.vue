@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink } from "vue-router";
+import store from "@/scripts/vuex/store";
 </script>
 
 <template>
@@ -27,5 +28,8 @@ import { RouterLink } from "vue-router";
                 </li>
             </router-link>
         </ul>
+
+        <span class="qwingin-server-info">服务器信息:</span><br>
+        <span class="qwingin-server-info">{{ store.getters.getServerInfo.server_name }} / {{ store.getters.getServerInfo.panel_info.name }}</span>
     </div>
 </template>

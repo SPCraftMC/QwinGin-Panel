@@ -35,3 +35,8 @@
     height: 35px;
     flex-shrink: 0;
 }
+
+.qwingin-server-info {
+    font-size: 2px;
+    margin-left: 5px;
+}
