@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^1.4.0",
+    "core-js": "^3.31.0",
     "mdui": "^1.0.2",
     "showdown": "^2.1.0",
     "vue": "^3.3.2",

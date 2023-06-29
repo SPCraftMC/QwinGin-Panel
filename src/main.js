@@ -3,6 +3,7 @@ import '@/assets/main.css'
 import '@/assets/extra-settings.css'
 import '@/assets/buttons.css'
 import mdui from 'mdui'
+import 'core-js/stable'
 
 import { createApp } from 'vue'
 import App from '@/App.vue'
