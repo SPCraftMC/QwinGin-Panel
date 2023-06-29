@@ -22,10 +22,6 @@ a {
     font-weight: 300;
 }
 
-.mdui-snackbar {
-    margin-bottom: 15px;
-}
-
 .qwingin-table-margin > .mdui-col-xs-12:not(:last-child) {
     margin-bottom: 20px;
 }
