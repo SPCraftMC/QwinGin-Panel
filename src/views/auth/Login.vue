@@ -4,6 +4,20 @@ import qvar from "@/scripts/qvar"
 import store from "@/scripts/vuex/store";
 import mdui from "mdui";
 import status from "@/scripts/vuex/status";
+import clogin from "@/scripts/core/login";
+
+let params = ref({
+    code: qvar("code"),
+    error: {
+        orgin: qvar("error"),
+        decoded: decodeURI(qvar("error"))
+    }
+})
+
+let data = ref({
+    name: "",
+    password: ""
+})
 
 //let auth_url = store.getters.__config.settings.system.yggdrasil_root + "/oauth/authorize?client_id=67&redirect_uri=" + window.location.protocol + "//" + window.location.host + "/auth/login&response_type=code&scope="
 if (status.getters.isSiteLoaded && store.getters.getCaptchaInfo.enable) {
@@ -14,7 +28,8 @@ if (status.getters.isSiteLoaded && store.getters.getCaptchaInfo.enable) {
                 turnstile.render('turnstile-container', {
                     sitekey: store.getters.getCaptchaInfo.site_key,
                     callback: function (token) {
-                        console.log(`Challenge Success ${token}`);
+                        data.cpatchaCode = token;
+                        console.log(`人机验证通过，Token： ${token}`);
                     },
                 });
             });
@@ -25,14 +40,6 @@ if (status.getters.isSiteLoaded && store.getters.getCaptchaInfo.enable) {
         }
     }, 1000)
 }
-
-let params = ref({
-    code: qvar("code"),
-    error: {
-        orgin: qvar("error"),
-        decoded: decodeURI(qvar("error"))
-    }
-})
 </script>
 
 <template>
@@ -56,17 +63,17 @@ let params = ref({
                     <h1>您好，请登录！</h1>
                     <div class="mdui-textfield"
                          style="display: flex; flex-direction: column; align-items: center; margin-top: 20px;">
-                        <input class="mdui-textfield-input" type="text" placeholder="用户名"
+                        <input v-model=data.name class="mdui-textfield-input" type="text" placeholder="用户名"
                                style="margin-bottom: 10px;">
                     </div>
                     <div class="mdui-textfield"
                          style="display: flex; flex-direction: column; align-items: center; margin-top: 20px;">
-                        <input class="mdui-textfield-input" type="text" placeholder="密码" style="margin-bottom: 10px;">
+                        <input v-model=data.password class="mdui-textfield-input" type="text" placeholder="密码" style="margin-bottom: 10px;">
                     </div>
                     <div class="turnsile" v-if="store.getters.getCaptchaInfo.enable">
                         <turnstile-container />
                     </div>
-                    <input class="button" type="button" value="登录">
+                    <input @click=clogin.login(data) class="button" type="button" value="登录">
                 </div>
 
                 <!--皮肤站-->
