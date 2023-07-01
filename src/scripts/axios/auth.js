@@ -4,6 +4,7 @@ import authinfo from "@/scripts/vuex/authinfo";
 import {sha256} from "js-sha256";
 import status from "@/scripts/vuex/status";
 import mdui from "mdui";
+import router from "@/router";
 
 const instance = axios.create({
     baseURL: settings.server + "/auth",
@@ -21,6 +22,7 @@ const auth = {
                 message: "请输入密码"
             })
         } else {
+            status.commit("loading", true)
             instance.post("/login", {
                 name: data.name,
                 password: sha256(data.password),
@@ -29,7 +31,10 @@ const auth = {
                 .then((response) => {
                     if (response.data.status) {
                         authinfo.commit("setToken", response.data.data.token)
-                        
+                        router.push(data.push)
+                        mdui.snackbar({
+                            message: "鉴权成功，欢迎回来！"
+                        })
                         console.log("鉴权成功")
                     } else {
                         mdui.snackbar({
@@ -42,6 +47,7 @@ const auth = {
                         message: "无法鉴权: " + error.message
                     })
                 })
+            status.commit("loading", false)
         }
     }
 }

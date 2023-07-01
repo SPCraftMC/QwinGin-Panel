@@ -16,7 +16,7 @@ function more() {
 */
 
 function exit_login() {
-    localStorage.__extend_user_token = ""
+    localStorage.QGP_token = ""
     location.reload()
 }
 </script>

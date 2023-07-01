@@ -5,6 +5,7 @@ import store from "@/scripts/vuex/store";
 import mdui from "mdui";
 import status from "@/scripts/vuex/status";
 import clogin from "@/scripts/core/login";
+import Turnstile from 'cf-turnstile'
 
 let params = ref({
     code: qvar("code"),
@@ -16,29 +17,37 @@ let params = ref({
 
 let data = ref({
     name: "",
-    password: ""
+    password: "",
+    push: "/"
 })
+
+if (qvar("to") != null) {
+    data.push = qvar("to")
+}
 
 //let auth_url = store.getters.__config.settings.system.yggdrasil_root + "/oauth/authorize?client_id=67&redirect_uri=" + window.location.protocol + "//" + window.location.host + "/auth/login&response_type=code&scope="
 if (status.getters.isSiteLoaded && store.getters.getCaptchaInfo.enable) {
-    setTimeout(() => {
-        try {
-            // if using synchronous loading, will be called once the DOM is ready
-            turnstile.ready(function () {
-                turnstile.render('turnstile-container', {
-                    sitekey: store.getters.getCaptchaInfo.site_key,
-                    callback: function (token) {
-                        data.cpatchaCode = token;
-                        console.log(`人机验证通过，Token： ${token}`);
-                    },
-                });
+    try {
+        new Turnstile({
+            publicKey: store.getters.getCaptchaInfo.site_key
+        })
+        /*
+        // if using synchronous loading, will be called once the DOM is ready
+        turnstile.ready(function () {
+            turnstile.render('turnstile-container', {
+                sitekey: store.getters.getCaptchaInfo.site_key,
+                callback: function (token) {
+                    data.cpatchaCode = token;
+                    console.log(`人机验证通过，Token： ${token}`);
+                },
             });
-        } catch (e) {
-            mdui.snackbar({
-                "message": "无法加载人机验证：" + e.message
-            })
-        }
-    }, 1000)
+        });
+        */
+    } catch (e) {
+        mdui.snackbar({
+            "message": "无法加载人机验证：" + e.message
+        })
+    }
 }
 </script>
 
@@ -68,10 +77,11 @@ if (status.getters.isSiteLoaded && store.getters.getCaptchaInfo.enable) {
                     </div>
                     <div class="mdui-textfield"
                          style="display: flex; flex-direction: column; align-items: center; margin-top: 20px;">
-                        <input v-model=data.password class="mdui-textfield-input" type="text" placeholder="密码" style="margin-bottom: 10px;">
+                        <input v-model=data.password class="mdui-textfield-input" type="password" placeholder="密码"
+                               style="margin-bottom: 10px;">
                     </div>
-                    <div class="turnsile" v-if="store.getters.getCaptchaInfo.enable">
-                        <turnstile-container />
+                    <div class="turnstile" v-if="store.getters.getCaptchaInfo.enable">
+                        <turnstile-container/>
                     </div>
                     <input @click=clogin.login(data) class="button" type="button" value="登录">
                 </div>
