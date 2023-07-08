@@ -1,6 +1,7 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import loadBar from "@/scripts/loading";
 import authinfo from "@/scripts/vuex/authinfo";
+import mdui from "mdui";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -46,19 +47,24 @@ const router = createRouter({
 router.beforeEach((to) => {
     loadBar.start()
     if (
-      to.name !== "404"
+        to.name !== "404"
       && to.name !== "auth-login"
       && to.name !== "auth-register"
       && to.name !== "about"
       ) {
-        if (authinfo.getters.token === "") router.push("/auth/login")
-        else {
-          if (
-            to.name !== "auth-login"
-            && to.name !== "auth-register"
-          ) {
-            router.push("/")
-          }
+        if (authinfo.getters.token === "")
+            router.push("/auth/login")
+    } else {
+        if (authinfo.getters.token !== "") {
+            if (
+                to.name === "auth-login"
+                || to.name === "auth-register"
+            ) {
+                router.push("/")
+                mdui.snackbar({
+                    message: "您已完成鉴权，不需要再授权了！"
+                })
+            }
         }
     }
 })

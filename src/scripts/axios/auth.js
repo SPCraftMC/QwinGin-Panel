@@ -78,7 +78,7 @@ function register(data) {
                 instance.post("/register", {
                     name: data.name,
                     password: sha256(data.password),
-
+                    email: data.email,
                 })
                 .then((response) => {
                     if (response.data.status) {
