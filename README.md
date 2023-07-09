@@ -1,6 +1,6 @@
 # QwinGin Panel
 
-「青镜」玩家管理面板
+「青镜」玩家管理面板，建议与[╭映水╯守护进程](https://github.com/SPCraftMC/EnShii-Daemon)搭配使用
 
 ## Customize configuration
 
