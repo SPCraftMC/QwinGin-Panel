@@ -77,20 +77,19 @@ function register(data) {
                 status.commit("loading", true)
                 instance.post("/register", {
                     name: data.name,
-                    password: sha256(data.password),
+                    password: data.password,
                     email: data.email,
                 })
                 .then((response) => {
                     if (response.data.status) {
-                        authinfo.commit("setToken", response.data.data.token)
                         router.push(data.push)
                         mdui.snackbar({
-                            message: "鉴权成功，欢迎回来！"
+                            message: "注册成功，请登录！"
                         })
-                        console.log("鉴权成功")
+                        console.log("注册成功")
                     } else {
                         mdui.snackbar({
-                            message: "无法鉴权: " + response.data.message
+                            message: "无法注册: " + response.data.message
                         })
                     }
                 })

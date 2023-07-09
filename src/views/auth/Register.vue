@@ -11,7 +11,7 @@ let data = ref({
     password: "",
     confirm_password: "",
     email: "",
-    push: "/login"
+    push: "/auth/login"
 })
 
 if (qvar("to") != null) {

@@ -9,9 +9,8 @@ const instance = axios.create({
     timeout: 10000
 });
 
-const server = {
-    init: () => {
-        instance.get("/information")
+function init() {
+    instance.get("/information")
                 .then((response) => {
                     if (response.data.status) {
                         console.log("获得服务器信息")
@@ -32,7 +31,7 @@ const server = {
                         message: "无法请求数据: " + error.message
                     })
                 })
-        instance.get("/oauth_server")
+    instance.get("/oauth_server")
                 .then((response) => {
                     if (response.data.status) {
                         store.commit("oauthInfo", response.data.data)
@@ -44,7 +43,7 @@ const server = {
                         message: "无法请求数据: " + error.message
                     })
                 })
-        instance.get("/captcha")
+    instance.get("/captcha")
                 .then((response) => {
                     store.commit("captchaInfo", response.data.data)
                     status.commit("siteLoaded", false)
@@ -55,7 +54,10 @@ const server = {
                         message: "无法请求数据: " + error.message
                     })
                 })
-    }
+}
+
+const server = {
+    init: init
 }
 /*
 const userdata = {
