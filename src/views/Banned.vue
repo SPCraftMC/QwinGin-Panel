@@ -15,7 +15,6 @@ import store from "@/scripts/vuex/store"
 import { computed } from 'vue';
 
 const users = store.getters.getBlackListUsers;
-const usersText = JSON.stringify(users);
 
 //若不是，应当插入转换getters为数组代码
 </script>
