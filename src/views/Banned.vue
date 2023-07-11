@@ -12,7 +12,7 @@
 <script setup>
 import '@/assets/subs/banned.css';
 import store from "@/scripts/vuex/store"
-import { computed } from 'vue';
+//import { computed } from 'vue';
 
 const users = store.getters.getBlackListUsers;
 
