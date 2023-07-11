@@ -25,9 +25,7 @@ let captchaInfo = {
 
 let oauthInfo = {}
 
-let blackListUsers = {
-  name: ""
-}
+let blackListUsers = {}
 
 let blackListInfo = {}
 

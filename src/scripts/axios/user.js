@@ -1,5 +1,6 @@
 import axios from "axios";
 import settings from "@/settings";
+import store from "@/scripts/vuex/store";
 //import { getOwnPropertySymbols } from "core-js/core/object";
 
 const instance = axios.create({
@@ -17,7 +18,7 @@ function getBlackListUsers()
 {
   instance.get('/blacklist')
     .then(response => {
-      store.commit('blackListUsers', response.data.data);
+      store.commit('updateBlackListUsers', response.data.data);
   })
 }
 

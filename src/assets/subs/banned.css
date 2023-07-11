@@ -5,6 +5,7 @@
   border-radius: 16px;
   background-color: #e0e0e0;
   cursor: pointer;
+  margin:5px;
 }
 
 .mdui-chip-selected {
