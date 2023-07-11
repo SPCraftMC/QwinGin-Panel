@@ -18,6 +18,12 @@ import store from "@/scripts/vuex/store";
                     <div class="mdui-list-item-content">账户</div>
                 </li>
             </router-link>
+            <router-link to="/banned">
+                <li class="mdui-list-item mdui-ripple">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">block</i>
+                    <div class="mdui-list-item-content">小黑屋</div>
+                </li>
+            </router-link>
 
             <li class="mdui-divider"></li>
 

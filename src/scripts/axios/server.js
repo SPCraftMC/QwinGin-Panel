@@ -3,6 +3,7 @@ import settings from "@/settings";
 import mdui from "mdui";
 import store from "@/scripts/vuex/store";
 import status from "@/scripts/vuex/status";
+import user from "@/scripts/axios/user";
 
 const instance = axios.create({
     baseURL: settings.server + "/server",
@@ -54,6 +55,7 @@ function init() {
                         message: "无法请求数据: " + error.message
                     })
                 })
+    user.getBlackListUsers()
 }
 
 const server = {

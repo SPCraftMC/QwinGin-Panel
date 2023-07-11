@@ -27,6 +27,11 @@ const router = createRouter({
             component: () => import('../views/About.vue')
         },
         {
+            path: "/banned",
+            name: "banned",
+            component: () => import('../views/Banned.vue')
+        },
+        {
             path: "/auth/login",
             name: "auth-login",
             component: () => import('../views/auth/Login.vue')
@@ -51,8 +56,9 @@ router.beforeEach((to) => {
       && to.name !== "auth-login"
       && to.name !== "auth-register"
       && to.name !== "about"
-      ) {
-        if (authinfo.getters.token === "")
+      && to.name !== "banned"
+    ) {
+    if (authinfo.getters.token === "")
             router.push("/auth/login")
     } else {
         if (authinfo.getters.token !== "") {
