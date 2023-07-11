@@ -17,8 +17,7 @@ function getBlackListUsers()
 {
   instance.get('/blacklist')
     .then(response => {
-      const blackListUsers = response.data;
-      store.commit('updateBlacklist', blackListUsers);
+      store.commit('blackListUsers', response.data.data);
   })
 }
 
