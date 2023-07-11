@@ -5,7 +5,6 @@
         <div class="mdui-chip" v-for="name in users" :key="name">
           <span class="mdui-chip-title">{{ name }}</span>
         </div>
-
       </div>
   </div>
 </template>
@@ -18,4 +17,5 @@ import { computed } from 'vue';
 const users = store.getters.getBlackListUsers;
 const usersText = JSON.stringify(users);
 
+//若不是，应当插入转换getters为数组代码
 </script>
