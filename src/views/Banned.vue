@@ -5,9 +5,6 @@
         <div class="mdui-chip" v-for="bannedUsers in users" :key="bannedUsers">
           <span class="mdui-chip-title">{{ bannedUsers }}</span>
         </div>
-        <div class="card">
-          <pre>{{ users }}</pre>
-        </div>
       </div>
   </div>
 </template>
