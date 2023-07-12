@@ -25,18 +25,14 @@ let captchaInfo = {
 
 let oauthInfo = {}
 
-let blackListUsers = {}
-
-let blackListInfo = {}
-
+let blackList = {}
 
 const store = new vuex.Store({
     state: ref({
         serverInfo: serverInfo,
         oauthInfo: oauthInfo,
         captchaInfo: captchaInfo,
-        blackListUsers: blackListUsers,
-        blackListInfo: blackListInfo,
+        blackList: blackList,
         userData
     }),
     getters: {
@@ -52,11 +48,8 @@ const store = new vuex.Store({
         userData(state) {
             return userData
         },
-        getBlackListUsers(state) {
-          return state.blackListUsers
-        },
-        getBlackListInfo(state) {
-          return state.blackListInfo
+        getBlackList(state) {
+          return state.blackList
         }
     },
     mutations: {
@@ -69,11 +62,8 @@ const store = new vuex.Store({
         captchaInfo(state, data) {
             state.captchaInfo = data
         },
-        updateBlackListUsers(state, data) {
-          state.blackListUsers = data
-        },
-        updateBlackListInfo(state, data) {
-          state.blackListInfo = data
+        updateBlackList(state, data) {
+          state.blackList = data
         }
     }
 })

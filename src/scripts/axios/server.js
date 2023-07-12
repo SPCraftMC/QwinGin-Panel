@@ -55,7 +55,7 @@ function init() {
                         message: "无法请求数据: " + error.message
                     })
                 })
-    user.getBlackListUsers()
+    user.getBlackList()
 }
 
 const server = {
