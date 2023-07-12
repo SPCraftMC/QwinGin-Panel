@@ -2,7 +2,7 @@ import axios from "axios";
 import settings from "@/settings";
 import store from "@/scripts/vuex/store";
 import authinfo from "@/scripts/vuex/authinfo.js"
-//import { getOwnPropertySymbols } from "core-js/core/object";
+import mdui from "mdui";
 
 const instance = axios.create({
     baseURL: settings.server + "/user",
@@ -10,19 +10,25 @@ const instance = axios.create({
 });
 
 function init() {
-    token: authinfo.getters.token
     instance.get("/information", {
 
     }).then()
 }
-
 function getBlackList() {
-  instance.get("/blacklist", {
-    token: authinfo.commit("setToken", token)
-  })
-  .then((response) => {
-    store.commit('updateBlackList', response.data.data);
-  })
+    instance.get(
+      '/blacklist',
+      {
+        params: {
+          token: authinfo.getters.token
+        }
+      })
+    .then((response) => {
+      store.commit('updateblackList', response.data.data);
+    }).catch((error) => {
+        mdui.snackbar({
+            message: "无法请求数据：" + error.message
+        })
+    })
 }
 
 const user = {
