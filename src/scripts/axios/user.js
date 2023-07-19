@@ -14,6 +14,7 @@ function init() {
 
     }).then()
 }
+
 function getBlackList() {
     instance.get(
       '/blacklist',
@@ -23,7 +24,7 @@ function getBlackList() {
         }
       })
     .then((response) => {
-      store.commit('updateblackList', response.data.data);
+      store.commit('updateBlackList', response.data.data);
     }).catch((error) => {
         mdui.snackbar({
             message: "无法请求数据：" + error.message
