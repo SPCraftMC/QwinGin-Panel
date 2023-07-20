@@ -3,10 +3,10 @@ import { ref } from 'vue'
 
 const authinfo = new vuex.Store({
     state: ref({
-        token: localStorage.QGP_token || "" 
+        token:  localStorage.QGP_token || "" 
     }),
     getters: {
-        token(state) {
+        getToken(state) {
             return state.token
         }
     },

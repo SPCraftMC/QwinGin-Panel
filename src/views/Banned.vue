@@ -20,5 +20,4 @@ export default {
     },
   },
 };
-console.log(blacklist)
 </script>

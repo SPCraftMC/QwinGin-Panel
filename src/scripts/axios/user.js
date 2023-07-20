@@ -16,15 +16,11 @@ function init() {
 }
 
 function getBlackList() {
-    instance.get(
-      '/blacklist',
-      {
-        params: {
-          token: authinfo.getters.token
-        }
-      })
-    .then((response) => {
-      store.commit('updateBlackList', response.data.data);
+    instance.post('/blacklist', {
+        token: authinfo.getters.getToken
+    })
+        .then((response) => {
+        store.commit('updateBlackList', response.data.data);
     }).catch((error) => {
         mdui.snackbar({
             message: "无法请求数据：" + error.message

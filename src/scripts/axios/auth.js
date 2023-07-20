@@ -29,8 +29,7 @@ function login(data) {
         })
                 .then((response) => {
                     if (response.data.status) {
-                        authinfo.commit("setToken", response.data.token)
-                        console.log(response.data)
+                        authinfo.commit("setToken", response.data.data.token)
                         router.push(data.push)
                         mdui.snackbar({
                             message: "鉴权成功，欢迎回来！"
