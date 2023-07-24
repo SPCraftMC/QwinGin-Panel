@@ -1,7 +1,7 @@
 <template>
-  <Layouts />
+  <Layouts/>
 </template>
 
 <script setup>
-  import Layouts from '@/layouts/default/Default.vue'
+  import Layouts from '@/components/App.vue'
 </script>
