@@ -1,57 +1,36 @@
-# base
+# QwinGin Panel
 
-## Project setup
+「青镜」玩家管理面板，建议与[╭映水╯守护进程](https://github.com/SPCraftMC/EnShii-Daemon)搭配使用
 
-```
-# yarn
-yarn
+## Customize configuration
 
-# npm
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Project Setup
+
+```sh
 npm install
-
-# pnpm
-pnpm install
 ```
 
-### Compiles and hot-reloads for development
+### Compile and Hot-Reload for Development
 
-```
-# yarn
-yarn dev
-
-# npm
+```sh
 npm run dev
-
-# pnpm
-pnpm dev
 ```
 
-### Compiles and minifies for production
+### Compile and Minify for Production
 
-```
-# yarn
-yarn build
-
-# npm
+```sh
 npm run build
-
-# pnpm
-pnpm build
 ```
 
-### Lints and fixes files
+## 技术栈
 
-```
-# yarn
-yarn lint
+- [Vue3](https://vuejs.org/)
+- [Vuex](https://vuex.vuejs.org/)
+- [Vuetify](https://vuetifyjs.com/)
+- [Axios](https://axios-http.com/)
 
-# npm
-npm run lint
+## Open Source LICENSE
 
-# pnpm
-pnpm lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://vitejs.dev/config/).
+[GPL-3.0](LICENSE)
