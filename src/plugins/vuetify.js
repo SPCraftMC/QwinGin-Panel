@@ -16,10 +16,12 @@ import { md3 } from 'vuetify/blueprints'
 export default createVuetify({
   blueprint: md3,
   theme: {
+    defaultTheme: 'dark',
     themes: {
       light: {
         colors: {
           primary: '#00d6a8',
+          'primary-darken-1': '#00d6a8',
           secondary: '#ffffff',
         },
       },
