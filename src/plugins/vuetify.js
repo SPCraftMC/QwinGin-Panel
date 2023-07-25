@@ -7,6 +7,7 @@
 // Styles
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
+import colors from 'vuetify/lib/util/colors'
 
 import { createVuetify } from 'vuetify'
 import { md3 } from 'vuetify/blueprints'
@@ -20,14 +21,14 @@ export default createVuetify({
     themes: {
       light: {
         colors: {
-          primary: '#00d6a8',
-          secondary: '#ffffff',
+          primary: colors.teal,
+          secondary: colors.teal.darken4,
         },
       },
       dark: {
         colors: {
-          primary: '#00d6a8',
-          secondary: '#ffffff',
+          primary: colors.teal.accent3,
+          secondary:colors.teal.lighten4,
         },
       },
     },
