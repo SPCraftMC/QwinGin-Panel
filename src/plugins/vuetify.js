@@ -14,9 +14,9 @@ import { md3 } from 'vuetify/blueprints'
 
 let defTheme = ref("light"); 
 
-let themeMedia = ref(window.matchMedia("(prefers-color-scheme: light)"));
+let themeMedia = window.matchMedia("(prefers-color-scheme: light)");
 console.log(`Matches: ${themeMedia.matches}`)
-console.log(`Matches raw: ${themeMedia}`)
+console.log(themeMedia)
 if (themeMedia.matches) {
   defTheme = "light";
 } else {
