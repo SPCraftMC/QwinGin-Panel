@@ -1,6 +1,6 @@
 <template>
   <v-app-bar 
-    title="「青镜」"
+    title="「青镜」玩家管理面板"
     scroll-behavior="collapse"
   >
     <v-btn 
