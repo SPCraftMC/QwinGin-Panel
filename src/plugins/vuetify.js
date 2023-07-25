@@ -12,7 +12,7 @@ import { ref } from 'vue';
 import { createVuetify } from 'vuetify'
 import { md3 } from 'vuetify/blueprints'
 
-let defTheme = "light"; 
+let defTheme = ref("light"); 
 
 let themeMedia = ref(window.matchMedia("(prefers-color-scheme: light)"));
 if (themeMedia.matches) {
@@ -20,6 +20,7 @@ if (themeMedia.matches) {
 } else {
   defTheme = "dark";
 }
+console.log(`Theme mode: ${defTheme}`)
 
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
