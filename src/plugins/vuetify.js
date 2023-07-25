@@ -25,7 +25,7 @@ if (themeMedia.matches) {
 export default createVuetify({
   blueprint: md3,
   theme: {
-    defaultTheme: 'dark',
+    defaultTheme: defTheme,
     themes: {
       light: {
         colors: {
