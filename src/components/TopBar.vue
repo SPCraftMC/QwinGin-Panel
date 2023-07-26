@@ -1,12 +1,13 @@
 <template>
-  <v-app-bar 
-    title="「青镜」玩家管理面板"
+  <v-app-bar
     scroll-behavior="collapse"
   >
+    <v-toolbar-title class="text-right" style="margin: 1rem">「青镜」玩家管理面板</v-toolbar-title>
     <v-btn 
       @click="toggleTheme"
       icon="mdi-brightness-6"
-    ></v-btn>
+    >
+    </v-btn>
   </v-app-bar>
 </template>
 <script setup>

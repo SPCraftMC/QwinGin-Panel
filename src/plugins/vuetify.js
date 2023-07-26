@@ -11,6 +11,8 @@ import { ref } from 'vue';
 
 import { createVuetify } from 'vuetify'
 import { md3 } from 'vuetify/blueprints'
+import * as components from 'vuetify/components'
+import * as labsComponents from 'vuetify/labs/components'
 
 let defTheme = ref("light"); 
 
@@ -43,5 +45,9 @@ export default createVuetify({
         },
       },
     },
+  },
+  components: {
+    ...components,
+    ...labsComponents,
   },
 })
