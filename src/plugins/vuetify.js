@@ -11,6 +11,7 @@ import { ref } from 'vue';
 
 import { createVuetify } from 'vuetify'
 import { md3 } from 'vuetify/blueprints'
+import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import * as components from 'vuetify/components'
 import * as labsComponents from 'vuetify/labs/components'
 
@@ -29,6 +30,13 @@ console.log(`Theme mode: ${defTheme}`)
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
   blueprint: md3,
+  icons: {
+    defaultSet: 'mdi',
+    aliases,
+    sets: {
+      mdi,
+    },
+  },
   theme: {
     defaultTheme: defTheme,
     themes: {

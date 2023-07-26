@@ -6,6 +6,7 @@
     <v-btn 
       @click="toggleTheme"
       icon="mdi-brightness-6"
+      color="none"
     >
     </v-btn>
   </v-app-bar>

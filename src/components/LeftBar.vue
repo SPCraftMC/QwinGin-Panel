@@ -1,10 +1,10 @@
 <template>
-<!--用户头像-->
   <v-list 
     nav
     height="4rem"
     class="d-flex align-center"
   >
+  <!--用户头像-->
   <v-list-item
     prepend-avatar="@/assets/logo.png"
     title="user"
@@ -17,13 +17,13 @@
 
 <!--侧边栏项-->
   <v-list density="compact" nav>
-    <v-list-item prepend-icon="mdi-dashboard" title="仪表板" value="dashboard"
+    <v-list-item prepend-icon="mdi-view-dashboard" title="仪表板" value="dashboard"
       to="/">
     </v-list-item>
-    <v-list-item prepend-icon="mdi-block" title="小黑屋" value="blacklist"
+    <v-list-item prepend-icon="mdi-checkbox-blank-off" title="小黑屋" value="blacklist"
       to="/blacklist">
     </v-list-item>
-    <v-list-item prepend-icon="mdi-info" title="关于" value="about"
+    <v-list-item prepend-icon="mdi-information" title="关于" value="about"
       to="/about">
     </v-list-item>
   </v-list>
