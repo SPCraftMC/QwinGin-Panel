@@ -69,7 +69,7 @@
         size="x-large"
         href="https://docs.1l1.icu/SPCraftMC/product/QwinGin-Panel"
       >
-        <v-icon start icon="mdi-article"></v-icon>
+        <v-icon start icon="mdi-file-document"></v-icon>
         「青镜」部署及使用文档
       </v-chip>
     </v-card-item>
