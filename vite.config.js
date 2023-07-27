@@ -6,11 +6,6 @@ import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import { defineConfig } from 'vite'
 import { fileURLToPath, URL } from 'node:url'
 
-// Dotenv
-import dotenv from 'dotenv'
-dotenv.config()
-const config = process.env
-
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -41,6 +36,6 @@ export default defineConfig({
     ],
   },
   server: {
-    port: config.PANEL_PORT,
+    port: 15455,
   },
 })

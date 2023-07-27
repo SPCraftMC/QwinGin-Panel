@@ -1,15 +1,13 @@
 <template>
   <v-card
-    variant="tonal"
     height="80vh"
     width="190vh"
   >
-    <v-card-item class="d-flex align-center justify-center mt-6">
+    <v-card-item class="d-flex justify-center mt-6">
       <span class="text-h6">本项目仓库</span>
     </v-card-item>
-    <v-card-item class="d-flex align-center justify-center">
+    <v-card-item class="d-flex justify-center">
       <v-chip
-        class="ma-2"
         color="primary"
         text-color="white"
         size="x-large"
@@ -33,12 +31,11 @@
         src="@/assets/rip.png"
       ></v-img>
     </v-overlay>
-    <v-card-item class="d-flex align-center justify-center mt-6">
+    <v-card-item class="d-flex justify-center mt-6">
       <span class="text-h6">其他项目仓库</span>
     </v-card-item>
-    <v-card-item class="d-flex align-center justify-center">
+    <v-card-item class="d-flex justify-center">
       <v-chip
-        class="ma-2"
         color="primary"
         text-color="white"
         size="x-large"
@@ -47,8 +44,9 @@
         <v-icon start icon="mdi-github"></v-icon>
         ╭映水╯守护进程 (EnShii-Daemon)
       </v-chip>
+    </v-card-item>
+    <v-card-item class="d-flex justify-center">
       <v-chip
-        class="ma-2"
         color="primary"
         text-color="white"
         size="x-large"
@@ -63,7 +61,6 @@
     </v-card-item>
     <v-card-item class="d-flex align-center justify-center">
         <v-chip
-        class="ma-2"
         color="primary"
         text-color="white"
         size="x-large"
@@ -78,7 +75,7 @@
       color="primary"
       class="mt-4"
     ></v-divider>
-    <v-card-item class="d-flex align-center justify-center">
+    <v-card-item class="d-flex justify-center">
         Open Source LICENSE: GPL-3.0 | By SPCraftMC & maincore_tech. | Made with 
       <v-chip 
         variant="text"

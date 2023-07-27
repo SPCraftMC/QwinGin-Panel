@@ -1,5 +1,7 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
+/*import loadBar from "@/scripts/loading";
+import authinfo from "@/scripts/vuex/authinfo";*/
 
 const routes = [
   {
@@ -20,7 +22,7 @@ const routes = [
   {
     path: '/blacklist',
     name: 'blacklist',
-    component: () => import('@/views/BLacklist.vue')
+    component: () => import('@/views/Blacklist.vue')
   },
   {
     path: '/:pathMatch(.*)',

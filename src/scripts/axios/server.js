@@ -1,12 +1,11 @@
 import axios from "axios";
-import settings from "@/settings";
-import mdui from "mdui";
 import store from "@/scripts/vuex/store";
 import status from "@/scripts/vuex/status";
 import user from "@/scripts/axios/user";
+import config from "@/config";
 
 const instance = axios.create({
-    baseURL: settings.server + "/server",
+    baseURL: config.server + "/server",
     timeout: 10000
 });
 
@@ -21,16 +20,16 @@ function init() {
                         document.querySelector("#site-ico").href = response.data.data.panel_info.icon
                     } else {
                         status.commit("siteLoaded", true)
-                        mdui.snackbar({
+                        /*mdui.snackbar({
                             message: "服务器错误: " + response.data.message
-                        })
+                        })*/
                     }
                 })
                 .catch((error) => {
                     status.commit("siteLoaded", true)
-                    mdui.snackbar({
+                    /*mdui.snackbar({
                         message: "无法请求数据: " + error.message
-                    })
+                    })*/
                 })
     instance.get("/oauth_server")
                 .then((response) => {
@@ -40,9 +39,9 @@ function init() {
                 })
                 .catch((error) => {
                     status.commit("siteLoaded", true)
-                    mdui.snackbar({
+                    /*mdui.snackbar({
                         message: "无法请求数据: " + error.message
-                    })
+                    })*/
                 })
     instance.get("/captcha")
                 .then((response) => {
@@ -51,9 +50,9 @@ function init() {
                 })
                 .catch((error) => {
                     status.commit("siteLoaded", true)
-                    mdui.snackbar({
+                    /*mdui.snackbar({
                         message: "无法请求数据: " + error.message
-                    })
+                    })*/
                 })
     user.getBlackList()
 }

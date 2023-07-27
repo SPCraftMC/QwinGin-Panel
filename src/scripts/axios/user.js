@@ -1,11 +1,10 @@
 import axios from "axios";
-import settings from "@/settings";
 import store from "@/scripts/vuex/store";
 import authinfo from "@/scripts/vuex/authinfo.js"
-import mdui from "mdui";
+import config from "@/config";
 
 const instance = axios.create({
-    baseURL: settings.server + "/user",
+    baseURL: config.server + "/user",
     timeout: 10000
 });
 
@@ -16,15 +15,13 @@ function init() {
 }
 
 function getBlackList() {
-    instance.post('/blacklist', {
-        token: authinfo.getters.getToken
-    })
+    instance.get('/blacklist', {})
         .then((response) => {
-        store.commit('updateBlackList', response.data.data);
+        store.commit('blackList', response.data.data);
     }).catch((error) => {
-        mdui.snackbar({
+        /*mdui.snackbar({
             message: "无法请求数据：" + error.message
-        })
+        })*/
     })
 }
 

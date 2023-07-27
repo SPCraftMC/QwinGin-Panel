@@ -62,8 +62,8 @@ const store = new vuex.Store({
         captchaInfo(state, data) {
             state.captchaInfo = data
         },
-        updateBlackList(state, data) {
-          state.blackList = data
+        blackList(state, data) {
+            state.blackList = data
         }
     }
 })
