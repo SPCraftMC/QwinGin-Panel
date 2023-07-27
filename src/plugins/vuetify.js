@@ -15,7 +15,7 @@ import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import * as components from 'vuetify/components'
 import * as labsComponents from 'vuetify/labs/components'
 
-let defTheme = ref("light"); 
+let defTheme
 
 let themeMedia = window.matchMedia("(prefers-color-scheme: light)");
 console.log(`Matches: ${themeMedia.matches}`)
