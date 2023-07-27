@@ -17,15 +17,15 @@
         <left-bar/>
       </v-navigation-drawer>
       <top-bar/>
-      <v-skeleton-loader
-        :loading="loading"
-        height="200rem"
-        width="100rem"
-      >
         <v-main class="d-flex align-center justify-center">
+          <v-skeleton-loader
+            :loading="loading"
+            height="200rem"
+            width="100rem"
+          >
           <router-view />
-        </v-main>
-     </v-skeleton-loader>
+        </v-skeleton-loader>
+      </v-main>
     </v-layout>
     <Footer/>
   </v-app>
