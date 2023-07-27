@@ -17,12 +17,12 @@
         <left-bar/>
       </v-navigation-drawer>
       <top-bar/>
-        <v-main class="d-flex align-center justify-center">
-          <v-skeleton-loader
-            :loading="loading"
-            height="100vh"
-            width="100vw"
-          >
+      <v-main class="d-flex align-center justify-center">
+        <v-skeleton-loader
+          :loading="loading"
+          height="100vh"
+          width="100vw"
+        >
           <router-view />
         </v-skeleton-loader>
       </v-main>
