@@ -20,8 +20,8 @@
         <v-main class="d-flex align-center justify-center">
           <v-skeleton-loader
             :loading="loading"
-            height="200rem"
-            width="100rem"
+            height="100vh"
+            width="100vw"
           >
           <router-view />
         </v-skeleton-loader>
