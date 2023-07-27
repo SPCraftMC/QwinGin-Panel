@@ -1,6 +1,7 @@
 <template>
   <v-card
-    width="30rem"
+    width="90%"
+    max-width="20vw"
   >
     <div class="d-flex flex-row">
       <v-tabs
