@@ -5,6 +5,7 @@
 ## Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
+and src/config.js
 
 ## Project Setup
 
