@@ -1,13 +1,13 @@
 <template>
   <v-card
-    width="90vmin"
+    width="23rem"
   >
     <div class="d-flex flex-row">
       <v-tabs
         v-model="tab"
         direction="vertical"
-        class="mt-4"
-        width="20vmin"
+        :style="{'margin-top': '1rem', 'margin-right': '1rem'}"
+        width="2rem"
       >
         <v-tab value="login" rounded="e-xl">
           <v-icon start>
@@ -22,24 +22,34 @@
       </v-tabs>
       <v-window v-model="tab">
         <v-window-item value="login">
-          <v-sheet width="63vmin" class="mx-2 mt-6">
-            <v-text-field v-model="loginData.name" label="用户名" variant="solo-filled" class="mx-2 mt-4"></v-text-field>
-            <v-text-field v-model="loginData.password" label="密码" variant="solo-filled" class="mx-2"></v-text-field>
+          <v-sheet width="17.5rem">
+            <v-text-field v-model="loginData.name" label="用户名" variant="solo-filled" :style="{'margin-right': '2rem', 'margin-top': '1rem'}"></v-text-field>
+            <v-text-field
+              :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+              :type="show ? 'text' : 'password'"
+              name="input-login"
+              @click:append="show = !show"
+              v-model="loginData.password"
+              label="密码"
+              variant="solo-filled"
+              style="margin-right: 2.7em"
+            >
+            </v-text-field>
             <v-sheet class="text-right">
-              <v-btn @click=clogin.login(loginData) size="large" rounded="s-xl" height="14vmin" variant="tonal" class="mb-6 mr-2">
+              <v-btn @click=clogin.login(loginData) size="large" rounded="s-xl" height="3.3rem" variant="tonal" :style="{'margin-right': '2rem', 'margin-bottom': '1rem'}">
                 登录
               </v-btn>
             </v-sheet>
           </v-sheet>
         </v-window-item>
         <v-window-item value="register">
-          <v-sheet width="63vmin" class="mx-2 mt-6">
-            <v-text-field label="用户名" variant="solo-filled" class="mx-2 mt-4"></v-text-field>
-            <v-text-field label="邮箱" variant="solo-filled" class="mx-2"></v-text-field>
-            <v-text-field label="密码" variant="solo-filled" class="mx-2"></v-text-field>
-            <v-text-field label="重复密码" variant="solo-filled" class="mx-2"></v-text-field>
+          <v-sheet width="17.5rem">
+            <v-text-field label="用户名" variant="solo-filled" :style="{'margin-right': '2rem', 'margin-top': '1rem'}"></v-text-field>
+            <v-text-field label="邮箱" variant="solo-filled" style="margin-right: 2rem"></v-text-field>
+            <v-text-field label="密码" variant="solo-filled" style="margin-right: 2rem"></v-text-field>
+            <v-text-field label="重复密码" variant="solo-filled" style="margin-right: 2rem"></v-text-field>
             <v-sheet class="text-right">
-              <v-btn size="large" rounded="s-xl" height="14vmin" variant="tonal" class="mb-6 mr-2">
+              <v-btn size="large" rounded="s-xl" height="3.3rem" variant="tonal" :style="{'margin-right': '2rem', 'margin-bottom': '1rem'}">
                 注册
               </v-btn>
             </v-sheet>
@@ -80,7 +90,8 @@ let loginData = ref({
 <script>
   export default {
     data: () => ({
-      tab: 'login'
+      tab: 'login',
+      show: false,
     }),
     methods: {
       required (v) {

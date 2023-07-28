@@ -1,7 +1,7 @@
 <template>
   <v-card
     height="80vh"
-    width="190vh"
+    width="92vw"
   >
     <v-card-item class="d-flex justify-center mt-6">
       <span class="text-h6">本项目仓库</span>
