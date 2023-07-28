@@ -1,6 +1,6 @@
 <template>
   <v-card
-    width="90vw"
+    width="60vw"
   >
     <div class="d-flex flex-row">
       <v-tabs
@@ -21,7 +21,7 @@
       </v-tabs>
       <v-window v-model="tab">
         <v-window-item value="login">
-          <v-card width="90vw">
+          <v-card width="60vw">
             <v-text-field v-model="loginData.name" label="用户名" variant="solo-filled" class="mx-6 mt-10"></v-text-field>
             <v-text-field v-model="loginData.password" label="密码" variant="solo-filled" class="mx-6"></v-text-field>
             <v-card-item class="text-right" width="24vw">
