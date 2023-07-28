@@ -24,8 +24,8 @@
           <v-card width="65vmin">
             <v-text-field v-model="loginData.name" label="用户名" variant="solo-filled" class="mx-2 mt-10"></v-text-field>
             <v-text-field v-model="loginData.password" label="密码" variant="solo-filled" class="mx-2"></v-text-field>
-            <v-card-item class="text-right" width="90vmin">
-              <v-btn @click=clogin.login(loginData) size="large" rounded="s-xl" height="12vmin" variant="tonal" class="mr-2 md-4">
+            <v-card-item class="text-right" width="65vmin">
+              <v-btn @click=clogin.login(loginData) size="large" rounded="s-xl" height="12vmin" variant="tonal" class="md-4">
                 登录
               </v-btn>
             </v-card-item>
