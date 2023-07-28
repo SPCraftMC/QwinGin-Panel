@@ -34,10 +34,10 @@
         </v-window-item>
         <v-window-item value="register">
           <v-sheet width="63vmin" class="mx-2 mt-6">
-            <v-text-field <!--v-model="registerData.name"--> label="用户名" variant="solo-filled" class="mx-2 mt-4"></v-text-field>
-            <v-text-field <!--v-model="registerData.email"--> label="邮箱" variant="solo-filled" class="mx-2"></v-text-field>
-            <v-text-field <!--v-model="registerData.password"--> label="密码" variant="solo-filled" class="mx-2"></v-text-field>
-            <v-text-field <!--v-model="registerData.confirmpassword"--> label="重复密码" variant="solo-filled" class="mx-2"></v-text-field>
+            <v-text-field label="用户名" variant="solo-filled" class="mx-2 mt-4"></v-text-field>
+            <v-text-field label="邮箱" variant="solo-filled" class="mx-2"></v-text-field>
+            <v-text-field label="密码" variant="solo-filled" class="mx-2"></v-text-field>
+            <v-text-field label="重复密码" variant="solo-filled" class="mx-2"></v-text-field>
             <v-sheet class="text-right">
               <v-btn size="large" rounded="s-xl" height="14vmin" variant="tonal" class="mb-6 mr-2">
                 注册
