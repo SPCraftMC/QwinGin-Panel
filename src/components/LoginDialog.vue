@@ -33,17 +33,17 @@
           </v-sheet>
         </v-window-item>
         <v-window-item value="register">
-          <v-card height="40vh" width="90vw">
-            <v-text-field label="用户名" :rules="[required]" variant="solo-filled" class="mx-6 mt-10"></v-text-field>
-            <v-text-field label="邮箱" :rules="[required]" variant="solo-filled" class="mx-6"></v-text-field>
-            <v-text-field label="密码" :rules="[required]" variant="solo-filled" class="mx-6"></v-text-field>
-            <v-text-field label="确认密码" :rules="[required]" variant="solo-filled" class="mx-6"></v-text-field>
-            <v-card-item class="text-right" width="24rem">
-              <v-btn size="large" rounded="s-xl" height="3.3rem" variant="tonal" class="mr-2">
+          <v-sheet width="63vmin" class="mx-2 mt-6">
+            <v-text-field v-model="registerData.name" label="用户名" variant="solo-filled" class="mx-2 mt-4"></v-text-field>
+            <v-text-field v-model="registerData.email" label="邮箱" variant="solo-filled" class="mx-2"></v-text-field>
+            <v-text-field v-model="registerData.password" label="密码" variant="solo-filled" class="mx-2"></v-text-field>
+            <v-text-field v-model="registerData.confirmpassword" label="重复密码" variant="solo-filled" class="mx-2"></v-text-field>
+            <v-sheet class="text-right">
+              <v-btn size="large" rounded="s-xl" height="14vmin" variant="tonal" class="mb-6 mr-2">
                 注册
               </v-btn>
-            </v-card-item>
-          </v-card>
+            </v-sheet>
+          </v-sheet>
         </v-window-item>
       </v-window>
     </div>
