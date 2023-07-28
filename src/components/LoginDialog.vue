@@ -7,6 +7,7 @@
         v-model="tab"
         direction="vertical"
         class="mt-4"
+        width="20vmin"
       >
         <v-tab value="login" rounded="e-xl">
           <v-icon start>
