@@ -22,7 +22,7 @@
       </v-tabs>
       <v-window v-model="tab">
         <v-window-item value="login">
-          <v-card width="70vmin" class="mr-2 mt-4">
+          <v-sheet width="65vmin" class="mr-2 mt-4">
             <v-text-field v-model="loginData.name" label="用户名" variant="solo-filled" class="mx-2 mt-4"></v-text-field>
             <v-text-field v-model="loginData.password" label="密码" variant="solo-filled" class="mx-2"></v-text-field>
             <v-sheet class="text-right">
@@ -30,7 +30,7 @@
                 登录
               </v-btn>
             </v-sheet>
-          </v-card>
+          </v-sheet>
         </v-window-item>
         <v-window-item value="register">
           <v-card height="40vh" width="90vw">
