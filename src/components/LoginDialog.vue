@@ -22,18 +22,18 @@
       </v-tabs>
       <v-window v-model="tab">
         <v-window-item value="login">
-          <v-card height="18rem" width="calc(60vw)">
+          <v-card height="18vh" width="90vw">
             <v-text-field v-model="loginData.name" label="用户名" variant="solo-filled" class="mx-6 mt-10"></v-text-field>
             <v-text-field v-model="loginData.password" label="密码" variant="solo-filled" class="mx-6"></v-text-field>
-            <v-card-item class="text-right" width="24rem">
-              <v-btn @click=clogin.login(loginData) size="large" rounded="s-xl" height="3.3rem" variant="tonal" class="mr-2">
+            <v-card-item class="text-right" width="24vw">
+              <v-btn @click=clogin.login(loginData) size="large" rounded="s-xl" height="4vh" variant="tonal" class="mr-2">
                 登录
               </v-btn>
             </v-card-item>
           </v-card>
         </v-window-item>
         <v-window-item value="register">
-          <v-card height="27.8rem" width="24rem">
+          <v-card height="40vh" width="90vw">
             <v-text-field label="用户名" :rules="[required]" variant="solo-filled" class="mx-6 mt-10"></v-text-field>
             <v-text-field label="邮箱" :rules="[required]" variant="solo-filled" class="mx-6"></v-text-field>
             <v-text-field label="密码" :rules="[required]" variant="solo-filled" class="mx-6"></v-text-field>
