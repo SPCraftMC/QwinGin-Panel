@@ -21,7 +21,7 @@
       </v-tabs>
       <v-window v-model="tab">
         <v-window-item value="login">
-          <v-card width="120vmin">
+          <v-card width="60vmin">
             <v-text-field v-model="loginData.name" label="用户名" variant="solo-filled" class="mx-4 mt-10"></v-text-field>
             <v-text-field v-model="loginData.password" label="密码" variant="solo-filled" class="mx-4"></v-text-field>
             <v-card-item class="text-right" width="24vmin">
