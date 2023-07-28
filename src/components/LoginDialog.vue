@@ -21,9 +21,9 @@
       </v-tabs>
       <v-window v-model="tab">
         <v-window-item value="login">
-          <v-card width="60vmin">
-            <v-text-field v-model="loginData.name" label="用户名" variant="solo-filled" class="mx-4 mt-10"></v-text-field>
-            <v-text-field v-model="loginData.password" label="密码" variant="solo-filled" class="mx-4"></v-text-field>
+          <v-card width="65vmin">
+            <v-text-field v-model="loginData.name" label="用户名" variant="solo-filled" class="mx-2 mt-10"></v-text-field>
+            <v-text-field v-model="loginData.password" label="密码" variant="solo-filled" class="mx-2"></v-text-field>
             <v-card-item class="text-right" width="60vmin">
               <v-btn @click=clogin.login(loginData) size="large" rounded="s-xl" height="12vmin" variant="tonal" class="mr-2">
                 登录
