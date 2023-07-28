@@ -22,11 +22,11 @@
       </v-tabs>
       <v-window v-model="tab">
         <v-window-item value="login">
-          <v-sheet width="65vmin" class="mr-2 mt-4">
+          <v-sheet width="65vmin" class="mr-2 mt-6">
             <v-text-field v-model="loginData.name" label="用户名" variant="solo-filled" class="mx-2 mt-4"></v-text-field>
             <v-text-field v-model="loginData.password" label="密码" variant="solo-filled" class="mx-2"></v-text-field>
             <v-sheet class="text-right">
-              <v-btn @click=clogin.login(loginData) size="large" rounded="s-xl" height="14vmin" variant="tonal" class="mb-4 mr-2">
+              <v-btn @click=clogin.login(loginData) size="large" rounded="s-xl" height="14vmin" variant="tonal" class="mb-6 mr-2">
                 登录
               </v-btn>
             </v-sheet>
