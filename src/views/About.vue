@@ -1,7 +1,7 @@
 <template>
   <v-card
     height="80vh"
-    width="92vw"
+    width="88vw"
   >
     <v-card-item class="d-flex justify-center mt-6">
       <span class="text-h6">本项目仓库</span>
@@ -25,11 +25,18 @@
       contained
     >
       <v-img
-        width="15rem"
+        width="16rem"
         aspect-ratio="1/1"
-        cover
         src="@/assets/rip.png"
       ></v-img>
+      <v-chip
+        size="x-large"
+        color="pink"
+        href="https://呆洋橙🥰🥰🤤🤤🤤.1l1.icu"
+        :style="{'margin-top': '1rem'}"
+      >
+        戳这里看dyc姐姐的性感写真
+      </v-chip>
     </v-overlay>
     <v-card-item class="d-flex justify-center mt-6">
       <span class="text-h6">其他项目仓库</span>
@@ -60,7 +67,7 @@
       <span class="text-h6">文档</span>
     </v-card-item>
     <v-card-item class="d-flex align-center justify-center">
-        <v-chip
+      <v-chip
         color="primary"
         text-color="white"
         size="x-large"
@@ -80,7 +87,7 @@
       <v-chip 
         variant="text"
         @click="overlay = !overlay"
-      ><span  style='color: red'>❤</span>
+      ><span style='color: red'>❤</span>
       </v-chip>.
     </v-card-item>
   </v-card>
@@ -101,3 +108,14 @@
     },
   }
 </script>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+  }
+</style>

@@ -44,12 +44,12 @@
         </v-window-item>
         <v-window-item value="register">
           <v-sheet width="17.5rem">
-            <v-text-field label="用户名" variant="solo-filled" :style="{'margin-right': '2rem', 'margin-top': '1rem'}"></v-text-field>
-            <v-text-field label="邮箱" variant="solo-filled" style="margin-right: 2rem"></v-text-field>
-            <v-text-field label="密码" variant="solo-filled" style="margin-right: 2rem"></v-text-field>
-            <v-text-field label="重复密码" variant="solo-filled" style="margin-right: 2rem"></v-text-field>
+            <v-text-field v-model="registerData.name" label="用户名" variant="solo-filled" :style="{'margin-right': '2rem', 'margin-top': '1rem'}"></v-text-field>
+            <v-text-field v-model="registerData.email" label="邮箱" variant="solo-filled" style="margin-right: 2rem"></v-text-field>
+            <v-text-field v-model="registerData.password" label="密码" variant="solo-filled" style="margin-right: 2rem"></v-text-field>
+            <v-text-field v-model="registerData.confirm_password" label="验证密码" variant="solo-filled" style="margin-right: 2rem"></v-text-field>
             <v-sheet class="text-right">
-              <v-btn size="large" rounded="s-xl" height="3.3rem" variant="tonal" :style="{'margin-right': '2rem', 'margin-bottom': '1rem'}">
+              <v-btn @click=cregister.register(registerData) size="large" rounded="s-xl" height="3.3rem" variant="tonal" :style="{'margin-right': '2rem', 'margin-bottom': '1rem'}">
                 注册
               </v-btn>
             </v-sheet>
@@ -63,8 +63,9 @@
 <script setup>
 import {ref} from 'vue'
 //import qvar from "@/scripts/qvar"
-//import store from "@/scripts/vuex/store";
-import clogin from "@/scripts/core/login";
+//import store from "@/scripts/vuex/store"
+import clogin from "@/scripts/core/login"
+import cregister from "@/scripts/core/register"
 
 /*let params = ref({
     code: qvar("code"),
@@ -78,6 +79,14 @@ let loginData = ref({
     name: "",
     password: "",
     push: "/"
+})
+
+let registerData = ref({
+    name: "",
+    password: "",
+    confirm_password: "",
+    email: "",
+    push: "/auth/login"
 })
 
 /*if (qvar("to") != null) {
