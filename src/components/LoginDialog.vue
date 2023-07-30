@@ -27,7 +27,6 @@
             <v-text-field
               :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
               :type="show ? 'text' : 'password'"
-              name="input-login"
               @click:append="show = !show"
               v-model="loginData.password"
               label="密码"
@@ -46,8 +45,24 @@
           <v-sheet width="17.5rem">
             <v-text-field v-model="registerData.name" label="用户名" variant="solo-filled" :style="{'margin-right': '2rem', 'margin-top': '1rem'}"></v-text-field>
             <v-text-field v-model="registerData.email" label="邮箱" variant="solo-filled" style="margin-right: 2rem"></v-text-field>
-            <v-text-field v-model="registerData.password" label="密码" variant="solo-filled" style="margin-right: 2rem"></v-text-field>
-            <v-text-field v-model="registerData.confirm_password" label="验证密码" variant="solo-filled" style="margin-right: 2rem"></v-text-field>
+            <v-text-field
+              v-model="registerData.password"
+              label="密码"
+              variant="solo-filled"
+              style="margin-right: 2rem"
+              :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+              :type="show ? 'text' : 'password'"
+              @click:append="show = !show"
+            ></v-text-field>
+            <v-text-field
+              v-model="registerData.confirm_password"
+              label="验证密码"
+              variant="solo-filled"
+              style="margin-right: 2rem"
+              :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+              :type="show ? 'text' : 'password'"
+              @click:append="show = !show"
+            ></v-text-field>
             <v-sheet class="text-right">
               <v-btn @click=cregister.register(registerData) size="large" rounded="s-xl" height="3.3rem" variant="tonal" :style="{'margin-right': '2rem', 'margin-bottom': '1rem'}">
                 注册

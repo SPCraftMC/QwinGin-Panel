@@ -1,12 +1,12 @@
 <template>
   <v-app>
     <v-dialog
-          v-model="dialog"
-          persistent
-          width="auto"
-        >
-          <login-dialog />
-        </v-dialog>
+      v-model="dialog"
+      persistent
+      width="auto"
+    >
+      <login-dialog />
+    </v-dialog>
     <v-layout class="rounded rounded-md">
       <v-navigation-drawer
         expand-on-hover
