@@ -5,9 +5,8 @@ import status from "@/scripts/vuex/status";
 import router from "@/router";
 import config from "@/config";
 
-//import Vuetify from "vuetify";
-
-//const vuetify = new Vuetify();
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 
 const instance = axios.create({
   baseURL: config.server + "/auth",
