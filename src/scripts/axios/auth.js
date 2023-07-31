@@ -13,14 +13,6 @@ const instance = axios.create({
   timeout: 10000,
 });
 
-/*Toastify({
-    text: "请输入密码",
-    duration: 1145000,
-    position: "custom",
-    close: true,
-    style: {background: "#F44336"},
-}).showToast()*/
-
 function login(data) {
   //status.commit("loading", true);
   instance
@@ -53,6 +45,7 @@ function login(data) {
         text: "错误" + error.message,
         duration: 5000,
         position: "custom",
+        style: { background: "#F44336" },
         close: true,
       }).showToast()
     })
@@ -72,23 +65,31 @@ function register(data) {
     .then((response) => {
       if (response.data.status) {
         router.push(data.push);
-        vuetify.framework.snackbar.show({
-          message: "注册成功，请登录！",
-          color: "success",
-        });
+        Toastify({
+          text: "注册成功",
+          duration: 5000,
+          position: "custom",
+          close: true,
+        }).showToast()
         console.log("注册成功");
       } else {
-        vuetify.framework.snackbar.show({
-          message: "无法注册: " + response.data.message,
-          color: "error",
-        });
+        Toastify({
+          text: "无法注册 " + response.error.message,
+          duration: 5000,
+          position: "custom",
+          style: { background: "#F44336" },
+          close: true,
+        }).showToast()
       }
     })
     .catch((error) => {
-      vuetify.framework.snackbar.show({
-        message: "请求错误: " + error.message,
-        color: "error",
-      });
+      Toastify({
+        text: "请求错误 " + error.message,
+        duration: 5000,
+        position: "custom",
+        style: { background: "#F44336" },
+        close: true,
+      }).showToast()
     })
     .finally(() => {
       status.commit("loading", false);
