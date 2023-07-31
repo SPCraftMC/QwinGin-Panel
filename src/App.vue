@@ -82,15 +82,15 @@ export default {
     }
   },
   methods: {
-    isLogin () {
+    isLogin() {
       if (authinfo.getters.getToken === "") {
         this.dialog = true,
-        this.loading = true
+          this.loading = true
       } else {
         this.dialog = false,
-        this.loading = false
+          this.loading = false
       }
-    },
-  },
+    }
+  }
 }
 </script>
