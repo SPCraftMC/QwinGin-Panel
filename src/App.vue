@@ -64,7 +64,7 @@ export default {
       setTimeout(() => {
         this.isLogin()
       }, 1)
-    }, 300);
+    }, 75);
   },
   unmounted(){
     clearInterval(this.timer)
