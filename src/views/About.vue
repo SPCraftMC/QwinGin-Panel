@@ -83,7 +83,7 @@
       class="mt-4"
     ></v-divider>
     <v-card-item class="d-flex justify-center">
-        Open Source LICENSE: GPL-3.0 | By SPCraftMC & maincore_tech. | Made with 
+        Open Source LICENSE: GPL-3.0 | By SPCraftMC & crux_tech. | Made with 
       <v-chip 
         variant="text"
         @click="overlay = !overlay"
