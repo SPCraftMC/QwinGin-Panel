@@ -1,20 +1,13 @@
-# Nuxt 3 Minimal Starter
+# 「青镜」 (QwinGin-Panel)
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+「青镜」玩家管理面板，旨在为多外置提供可视化用户自管理解决方案。
 
 ## Setup
 
 Make sure to install the dependencies:
 
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
-
-# yarn
-yarn install
 ```
 
 ## Development Server
@@ -22,14 +15,7 @@ yarn install
 Start the development server on `http://localhost:3000`:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
 pnpm run dev
-
-# yarn
-yarn dev
 ```
 
 ## Production
@@ -37,27 +23,11 @@ yarn dev
 Build the application for production:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
 pnpm run build
-
-# yarn
-yarn build
 ```
 
-Locally preview production build:
+## 技术栈
 
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- Vue3
+- Nuxt.js
+- Element+

@@ -1,0 +1,18 @@
+.el-header {
+    border-bottom: 1px solid var(--el-border-color);
+    padding: 10px;
+}
+
+.el-aside {
+    height: 100vh;
+    border-right: 1px solid var(--el-border-color);
+}
+
+.el-footer {
+    padding: 15px;
+    border-top: 1px solid var(--el-border-color);
+}
+
+.el-link {
+    transition: 0.3s;
+}
