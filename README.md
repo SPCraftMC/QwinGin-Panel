@@ -31,3 +31,4 @@ pnpm run build
 - Vue3
 - Nuxt.js
 - Element+
+- js-md5

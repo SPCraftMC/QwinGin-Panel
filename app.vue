@@ -23,7 +23,7 @@
       </el-footer>
 
     </el-container>
-    
+
     <el-backtop :right="100" :bottom="100" />
   </el-config-provider>
 </template>
@@ -41,4 +41,10 @@ import '@/src/style/el.css'
 // Element+ Config
 import { ElConfigProvider } from 'element-plus'
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
+
+const route = useRoute()
+
+if (route.path === "/") {
+  route.push("/dashboard")
+}
 </script>
