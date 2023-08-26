@@ -1,3 +1,25 @@
+* {    
+    transition: 1s;
+}
+
+.❤ {
+    color: red;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 100;
+    color: #20e3a8;
+}
+
+a {
+    color: #20e3a8;
+    transform: 0.5s;
+    text-decoration: none;
+}
+a:hover {
+    color:rgb(76, 231, 184);
+}
+
 .qwingin-title {
     font-weight: 100;
     display: inline;
@@ -6,4 +28,15 @@
 .qwingin-float-right {
     float: right;
     display: inline;
+}
+
+.qwingin-about-card {
+    margin: 0 auto;
+}
+
+.qwingin-page-title {
+    padding: 3px;
+    padding-left: 8px;
+    border-left: #20e3a8 solid 5px;
+    font-size: 20px !important;
 }

@@ -1,3 +1,3 @@
 <template>
-    <el-text>Powered by <el-link target="_blank" href="https://github.com/SPCraftMC/QwinGin-Panel">「青镜」 (QwinGin-Panel)</el-link></el-text>
+    <el-text>Powered by <nuxt-link to="/i/about">「青镜」 (QwinGin-Panel)</nuxt-link> with <el-text class="❤">❤</el-text>.</el-text>
 </template>

@@ -6,6 +6,7 @@
 .el-aside {
     height: 100vh;
     border-right: 1px solid var(--el-border-color);
+    transition: 1s;
 }
 
 .el-footer {
@@ -14,5 +15,17 @@
 }
 
 .el-link {
-    transition: 0.3s;
+    transform: translate(0, -1.5px);
+    transition: 0.5s;
+    color: #20e3a8;
+}
+
+.el-button {
+    margin: 5px;
+}
+
+@media screen and (max-width: 710px) { 
+    .el-aside {
+        width: 0;
+    }
 }

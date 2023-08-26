@@ -2,13 +2,15 @@
   <el-config-provider :locale="zhCn">
     <el-container>
 
+      <Progress />
+
       <el-header>
         <Header />
       </el-header>
 
       <el-container>
 
-        <el-aside width="200px">
+        <el-aside width="300px">
           <Aside />
         </el-aside>
 
@@ -34,6 +36,7 @@ import Header from '@/src/layout/header.vue'
 import Aside from '@/src/layout/aside.vue'
 import Main from '@/src/layout/main.vue'
 import Footer from '@/src/layout/footer.vue'
+import Progress from '@/src/layout/progress.vue'
 
 import '@/src/style/style.css'
 import '@/src/style/el.css'
@@ -42,9 +45,15 @@ import '@/src/style/el.css'
 import { ElConfigProvider } from 'element-plus'
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 
-const route = useRoute()
+import statuz from '@/src/script/vuex/statuz'
 
-if (route.path === "/") {
-  route.push("/dashboard")
-}
+const route = useRoute()
+const router = useRouter()
+
+setInterval(() => {
+  if (route.path === "/") router.push({ path: "/dashboard" })
+})
+addEventListener('load', () => {
+  statuz.commit("loading", false)
+});
 </script>
