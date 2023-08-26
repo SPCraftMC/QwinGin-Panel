@@ -32,7 +32,8 @@ pnpm run build
 
 ## 技术栈
 
-- Vue3
+- Vue.js
 - Nuxt.js
+- Axios
 - Element+
 - js-md5
