@@ -5,28 +5,28 @@
                 <!-- 侧边导航 -->
 
                 <!-- 1 -->
-                <el-menu-item index="1">
-                    <nuxt-link to="/dashboard">
+                <nuxt-link to="/dashboard">
+                    <el-menu-item index="1">
                         <i class="el-icon-location"></i>
                         <span slot="title">仪表板</span>
-                    </nuxt-link>
-                </el-menu-item>
+                    </el-menu-item>
+                </nuxt-link>
 
                 <!-- 2 -->
-                <el-menu-item index="2">
-                    <nuxt-link to="/account">
+                <nuxt-link to="/account">
+                    <el-menu-item index="2">
                         <i class="el-icon-menu"></i>
                         <span slot="title">账户</span>
-                    </nuxt-link>
-                </el-menu-item>
+                    </el-menu-item>
+                </nuxt-link>
 
                 <!-- 3 -->
-                <el-menu-item index="3">
-                    <nuxt-link to="/blacklist">
+                <nuxt-link to="/blacklist">
+                    <el-menu-item index="3">
                         <i class="el-icon-setting"></i>
                         <span slot="title">小黑屋</span>
-                    </nuxt-link>
-                </el-menu-item>
+                    </el-menu-item>
+                </nuxt-link>
             </el-menu>
         </el-col>
     </el-row>

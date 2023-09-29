@@ -1,5 +1,4 @@
 import vuex from 'vuex'
-import { ref } from 'vue'
 
 const statuz = new vuex.Store({
     state: ref({

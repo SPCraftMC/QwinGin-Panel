@@ -54,4 +54,9 @@ setInterval(() => {
   if (route.path === "/") router.push({ path: "/dashboard" })
 })
 statuz.commit("loading", false)
+
+
+import notification from '@/src/script/el/notification'
+
+notification.nostatus("QwinGin-Panel Dev", "测试版本不代表最终样式")
 </script>

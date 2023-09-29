@@ -1,5 +1,4 @@
 import vuex from 'vuex'
-import { ref } from 'vue'
 import md5 from 'js-md5'
 
 let serverInfo = ref({
