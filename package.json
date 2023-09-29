@@ -12,7 +12,8 @@
     "@element-plus/nuxt": "^1.0.5",
     "@nuxt/devtools": "latest",
     "@types/node": "^18.17.3",
-    "nuxt": "^3.6.5"
+    "nuxt": "^3.6.5",
+    "nuxt-headlessui": "^1.1.4"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",
