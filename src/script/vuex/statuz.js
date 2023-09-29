@@ -1,7 +1,7 @@
 import vuex from 'vuex'
 import { ref } from 'vue'
 
-const store = new vuex.Store({
+const statuz = new vuex.Store({
     state: ref({
         loading: true
     }),

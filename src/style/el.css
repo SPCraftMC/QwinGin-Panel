@@ -4,8 +4,6 @@
 }
 
 .el-aside {
-    height: 100vh;
-    border-right: 1px solid var(--el-border-color);
     transition: 1s;
 }
 
@@ -22,6 +20,12 @@
 
 .el-button {
     margin: 5px;
+}
+
+.el-menu .el-menu-item * {
+    color: gray;
+    font-size: large;
+    transform: translate(-5px);
 }
 
 @media screen and (max-width: 710px) { 

@@ -6,7 +6,7 @@
         <a target="_blank" href="https://github.com/SPCraftMC/QwinGin-Panel">
             <el-button color="#20e3a8" plain class="button">GitHub</el-button>
         </a>
-        <a target="_blank" href="https://github.com/SPCraftMC/QwinGin-Panel">
+        <a target="_blank" href="https://docs.1l1.icu/qwingin-panel">
             <el-button color="skyblue" plain class="button">Docs</el-button>
         </a>
             
@@ -17,7 +17,7 @@
         <el-text>「青镜」玩家管理面板，旨在为多外置提供可视化用户自管理解决方案。</el-text><br>
         <el-text>Made by <b>SPCraftMC</b> & <b>crux_tech</b> with <el-text class="❤">❤</el-text>.</el-text><br>
         <el-text>Open Source LICENSE: 
-            <el-link target="_blank" href="https://github.com/SPCraftMC/EnShii-Daemon/blob/main/LICENSE">GPL-3.0</el-link>
+            <el-link target="_blank" href="https://github.com/SPCraftMC/QwinGin-Panel/blob/main/LICENSE">GPL-3.0</el-link>
         </el-text>
     </div>
   </el-card>

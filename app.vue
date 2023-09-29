@@ -31,6 +31,8 @@
 </template>
 
 <script setup>
+import statuz from '@/src/script/vuex/statuz'
+
 // Layout
 import Header from '@/src/layout/header.vue'
 import Aside from '@/src/layout/aside.vue'
@@ -45,15 +47,11 @@ import '@/src/style/el.css'
 import { ElConfigProvider } from 'element-plus'
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 
-import statuz from '@/src/script/vuex/statuz'
-
 const route = useRoute()
 const router = useRouter()
 
 setInterval(() => {
   if (route.path === "/") router.push({ path: "/dashboard" })
 })
-addEventListener('load', () => {
-  statuz.commit("loading", false)
-});
+statuz.commit("loading", false)
 </script>
