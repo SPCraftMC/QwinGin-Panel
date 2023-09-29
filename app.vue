@@ -54,7 +54,14 @@ const router = useRouter()
 setInterval(() => {
   if (route.path === "/") router.push({ path: "/dashboard" })
 })
-statuz.commit("loading", false)
+
+// Auto Progress Bar
+router.beforeEach(() => {
+  statuz.commit("loading", true)
+})
+router.afterEach(() => {
+  statuz.commit("loading", false)
+})
 
 notification.nostatus("QwinGin-Panel Dev", "测试版本不代表最终样式")
 </script>

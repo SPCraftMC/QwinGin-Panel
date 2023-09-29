@@ -1,7 +1,7 @@
 <template>
     <el-progress
       :percentage="100"
-      status="success"
+      status="info"
       :indeterminate="true"
       :duration="1"
       v-if="statuz.getters.loading"
